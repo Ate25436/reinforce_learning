@@ -33,7 +33,7 @@ class TCGEnv(ParallelEnv):
         'card_14': [1, 1, 5, 2],
     }
     rewards_map = {
-        'punish': -0.01,
+        'punish': 0.0,
         'reward': 0.0,
         'win': 1.0,
         'lose': -1.0
@@ -173,33 +173,34 @@ class TCGEnv(ParallelEnv):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
         attacked_destruction = False
         attacker_destruction = False
-        if self.fields[agent][attacker_index][self.CARD_HEALTH] == 0:
+        if self.fields[agent][attacker_index][self.CARD_HEALTH] == 0:  #エージェントが指定した自盤面にカードが存在しなかった場合
             observation = self.create_observation()
             return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
-        if attacked_index <= 4 and self.fields[switch_agent][attacked_index][self.CARD_HEALTH] == 0:
+        if attacked_index <= 4 and self.fields[switch_agent][attacked_index][self.CARD_HEALTH] == 0:  #エージェントが指定した相手盤面にカードが存在しなかった場合
             observation = self.create_observation()
             return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
-        if self.attackable[agent][attacker_index] == 0:
+        if self.attackable[agent][attacker_index] == 0:  #エージェントが指定した自盤面のカードが攻撃可能でなかった場合
             observation = self.create_observation()
             return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
-        if attacked_index <= 4:
+        if attacked_index <= 4:  #相手盤面のカードを攻撃するときの相手カードの処理
             self.fields[switch_agent][attacked_index][self.CARD_HEALTH] -= self.fields[agent][attacker_index][self.CARD_ATTACK]
-        elif attacked_index == 5:
+        elif attacked_index == 5:  #相手プレイヤーを攻撃するときの処理
             self.health[switch_agent] -= self.fields[agent][attacker_index][self.CARD_ATTACK]
-        if attacked_index <= 4:
+        if attacked_index <= 4:  #相手盤面のカードを攻撃するときの自カードの処理
             self.fields[agent][attacker_index][self.CARD_HEALTH] -= self.fields[switch_agent][attacked_index][self.CARD_ATTACK]
-        elif attacked_index == 5:
+        elif attacked_index == 5:  #相手プレイヤーを攻撃するときの自カードの処理
             pass
 
-        if attacked_index <= 4 and self.fields[switch_agent][attacked_index][self.CARD_HEALTH] <= 0:
+        if attacked_index <= 4 and self.fields[switch_agent][attacked_index][self.CARD_HEALTH] <= 0:  #相手盤面のカードが破壊された場合
             self.fields[switch_agent][attacked_index] = [0, 0]
             self.attackable[switch_agent][attacked_index] = 0
             attacked_destruction = True
-        if self.fields[agent][attacker_index][self.CARD_HEALTH] <= 0:
+        if self.fields[agent][attacker_index][self.CARD_HEALTH] <= 0:  #自盤面のカードが破壊された場合
             self.fields[agent][attacker_index] = [0, 0]
             self.attackable[agent][attacker_index] = 0
             attacker_destruction = True
         self.attackable[agent][attacker_index] = 0
+        done = False
         if attacked_index <= 4:
             if attacked_destruction and attacker_destruction:
                 rewards = {agent: self.rewards_map['reward'], switch_agent: 0.0}
@@ -212,10 +213,11 @@ class TCGEnv(ParallelEnv):
         else:
             if self.health[switch_agent] <= 0:
                 rewards = {agent: self.rewards_map['win'], switch_agent: self.rewards_map['lose']}
+                done = True
             else:
                 rewards = {agent: self.rewards_map['reward'] * self.fields[agent][attacker_index][self.CARD_ATTACK], switch_agent: 0.0}
         observation = self.create_observation()
-        return observation, rewards, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
+        return observation, rewards, {agent: done, switch_agent: done}, {agent: {}, switch_agent: {}}
 
     def activate_ability(self, agent, card_info, field_index=None):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'

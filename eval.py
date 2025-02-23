@@ -5,7 +5,7 @@ from pettingzoo.utils.conversions import parallel_to_aec
 from stable_baselines3.common.vec_env import VecMonitor
 from stable_baselines3 import DQN
 
-from reinforce_learning.env import TCGEnv
+from env import TCGEnv
 
 env = TCGEnv()
 env = ss.flatten_v0(env)

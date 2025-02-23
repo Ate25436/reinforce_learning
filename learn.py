@@ -6,7 +6,7 @@ from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.vec_env import VecMonitor
 from gymnasium.wrappers import TimeLimit
 
-from reinforce_learning.env import TCGEnv
+from env import TCGEnv
 
 
 timesteps = 100000
@@ -18,7 +18,7 @@ def make_vec_env():
     return gym_env, vec_env
 
 # 5. SB3 で学習
-def learn_model(timesteps, vec_env):
+def learn_model(timesteps, vec_env, model_name):
     model = DQN("MlpPolicy",
     vec_env,
     learning_rate=1e-4,
@@ -36,12 +36,12 @@ def learn_model(timesteps, vec_env):
     device="cuda"
 )
     model.learn(total_timesteps=timesteps)
-    model.save("dqn_tcg")
+    model.save(model_name)
     return model
 
 def main():
     _, vec_env = make_vec_env()
-    model = learn_model(timesteps, vec_env)
+    model = learn_model(timesteps, vec_env, "dqn_tcg_no_punished")
 
 if __name__ == "__main__":
     main()

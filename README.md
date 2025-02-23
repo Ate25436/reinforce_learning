@@ -38,3 +38,10 @@
 - memo.md
   - 強化学習の報酬が記載されたファイル
   - 今後他の内容も乗せる可能性あり
+## 用いているライブラリ
+- gymnasium
+- pettingzoo
+- stable-baseline3
+- pytorch
+- supersuit
+- isort

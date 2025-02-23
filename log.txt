@@ -1,747 +1,560 @@
-----------------3----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 2 1 2 5; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 24
-
-            agent: agent_1
-            health: 20, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 1 1 1 4; 4 3 4 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 25
-PP: agent_0; hands: agent_0; fields: agent_0; decks: agent_0; 
-
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 2 1 2 5; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            health: 20, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 24
+            deck_num: 25
 
             agent: agent_1
             health: 20, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 1 1 1 4; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 1 1 1 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
             field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 24
 TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; decks: agent_1; 
 
-----------------2----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
+----------------5----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 2 1 2 5; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            health: 20, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 24
+            deck_num: 25
 
             agent: agent_1
             health: 20, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
             field: 1 1; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 23
-PP: agent_1; hands: agent_1; fields: agent_1; decks: agent_1; 
+            deck_num: 24
+PP: agent_1; hands: agent_1; fields: agent_1; 
 
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
             health: 20, PP: 2
-            hand: 3 3 3 0; 5 4 5 0; 2 1 2 5; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 24
+
+            agent: agent_1
+            health: 20, PP: 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 24
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
+
+----------------39----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 20, PP: 2
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 24
+
+            agent: agent_1
+            health: 20, PP: 2
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
             field: 1 1; 0 0; 0 0; 0 0; 0 0
             attackable: [1, 0, 0, 0, 0]
+            deck_num: 23
+TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
+
+----------------5----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 20, PP: 2
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 24
+
+            agent: agent_1
+            health: 20, PP: 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
+            deck_num: 23
+PP: agent_1; hands: agent_1; fields: agent_1; 
+
+----------------14----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 19, PP: 2
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 24
+
+            agent: agent_1
+            health: 20, PP: 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 23
+health: agent_0; attackable: agent_1; 
+
+----------------39----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 19, PP: 3
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 1 2 2 3; 0 0 0 0; 0 0 0 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
             deck_num: 23
 
             agent: agent_1
             health: 20, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 23
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
 
-----------------2----------------
+----------------6----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
-            attackable: [1, 1, 0, 0, 0]
-            deck_num: 23
-
-            agent: agent_1
-            health: 20, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            health: 19, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 23
-PP: agent_0; hands: agent_0; fields: agent_0; attackable: agent_0; 
-
-----------------20----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
             deck_num: 23
 
             agent: agent_1
             health: 18, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 23
-health: agent_1; attackable: agent_0; 
-
-----------------14----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 23
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 23
-health: agent_1; attackable: agent_0; 
+health: agent_1; PP: agent_0; hands: agent_0; fields: agent_0; 
 
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
+            health: 19, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 23
 
             agent: agent_1
-            health: 17, PP: 2
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 4 4 1 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
+            health: 18, PP: 3
+            hand: 4 4 1 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
+            attackable: [1, 1, 0, 0, 0]
             deck_num: 22
 TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
 
-----------------4----------------
+----------------0----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
+            health: 19, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 23
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 4; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
+            health: 18, PP: 2
+            hand: 0 0 0 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 1, 0, 0, 0]
             deck_num: 22
 PP: agent_1; hands: agent_1; fields: agent_1; 
+
+----------------20----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 17, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 23
+
+            agent: agent_1
+            health: 18, PP: 2
+            hand: 0 0 0 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
+            deck_num: 22
+health: agent_0; attackable: agent_1; 
+
+----------------14----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 1
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 23
+
+            agent: agent_1
+            health: 18, PP: 2
+            hand: 0 0 0 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 22
+health: agent_0; attackable: agent_1; 
 
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 20, PP: 3
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 1; 0 0; 0 0; 0 0
-            attackable: [1, 1, 0, 0, 0]
+            health: 16, PP: 4
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 22
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 4; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
+            health: 18, PP: 2
+            hand: 0 0 0 0; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
             deck_num: 22
 TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
 
-----------------9----------------
+----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 3
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 1 1 1 2; 1 3 2 4; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 2 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
+            health: 16, PP: 4
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 22
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 4; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 22
-fields: agent_0, agent_1; attackable: agent_0, agent_1; 
+            health: 18, PP: 4
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 21
+TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
 
-----------------4----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
+----------------39----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 20, PP: 1
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 1 1 1 2; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 3; 2 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
+            health: 16, PP: 5
+            hand: 5 4 5 0; 2 2 2 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 21
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 4; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 22
-PP: agent_0; hands: agent_0; fields: agent_0; decks: agent_0; 
+            health: 18, PP: 4
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 21
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
 
-----------------16----------------
+----------------1----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 1
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 1 1 1 2; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 3; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
+            health: 16, PP: 3
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 3 3 3 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 2; 2 2; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 21
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 22
-fields: agent_0, agent_1; attackable: agent_0; 
+            health: 18, PP: 4
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 21
+PP: agent_0; hands: agent_0; fields: agent_0; 
 
 ----------------3----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 0 0 0 0; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 3; 1 1; 0 0; 0 0; 0 0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 2; 2 2; 3 3; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
+            deck_num: 21
+
+            agent: agent_1
+            health: 18, PP: 4
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 4 4; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 21
+PP: agent_0; hands: agent_0; fields: agent_0; 
+
+----------------9----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 1; 2 2; 3 3; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 21
 
             agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 2; 0 0; 0 0; 0 0
+            health: 18, PP: 4
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 0 0; 2 2; 4 4; 0 0; 0 0
+            attackable: [0, 1, 1, 0, 0]
+            deck_num: 21
+fields: agent_0, agent_1; attackable: agent_0, agent_1; 
+
+----------------39----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 1; 2 2; 3 3; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 22
+            deck_num: 21
+
+            agent: agent_1
+            health: 18, PP: 5
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 0 0 0 0; 0 0 0 0
+            field: 0 0; 2 2; 4 4; 0 0; 0 0
+            attackable: [0, 1, 1, 0, 0]
+            deck_num: 20
+TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; decks: agent_1; 
+
+----------------22----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 1 1; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 21
+
+            agent: agent_1
+            health: 18, PP: 5
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 0 0 0 0; 0 0 0 0
+            field: 0 0; 2 2; 4 2; 0 0; 0 0
+            attackable: [0, 1, 0, 0, 0]
+            deck_num: 20
+fields: agent_0, agent_1; attackable: agent_1; 
+
+----------------15----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 21
+
+            agent: agent_1
+            health: 18, PP: 5
+            hand: 2 2 2 1; 1 3 2 4; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 0 0 0 0; 0 0 0 0
+            field: 0 0; 2 1; 4 2; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 20
+fields: agent_0, agent_1; attackable: agent_1; 
+
+----------------1----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 5 4 5 0; 0 0 0 0; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 21
+
+            agent: agent_1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 1; 4 2; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 19
+PP: agent_1; hands: agent_1; fields: agent_1; decks: agent_1; 
+
+----------------39----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 6
+            hand: 5 4 5 0; 2 2 2 1; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 1, 0, 0]
+            deck_num: 20
+
+            agent: agent_1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 1; 4 2; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 19
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
+
+----------------39----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 6
+            hand: 5 4 5 0; 2 2 2 1; 2 3 3 1; 0 0 0 0; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 1, 0, 0]
+            deck_num: 20
+
+            agent: agent_1
+            health: 18, PP: 6
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 0 0 0 0
+            field: 1 3; 2 1; 4 2; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 18
+TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
+
+----------------39----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 7
+            hand: 5 4 5 0; 2 2 2 1; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 1, 0, 0]
+            deck_num: 19
+
+            agent: agent_1
+            health: 18, PP: 6
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 0 0 0 0
+            field: 1 3; 2 1; 4 2; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 18
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
+
+----------------0----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 2
+            hand: 0 0 0 0; 2 2 2 1; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 0 0; 3 3; 0 0; 0 0
+            attackable: [0, 0, 1, 0, 0]
+            deck_num: 19
+
+            agent: agent_1
+            health: 18, PP: 6
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 0 0 0 0
+            field: 1 3; 2 1; 4 2; 0 0; 0 0
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 18
+PP: agent_0; hands: agent_0; fields: agent_0; 
+
+----------------23----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 2
+            hand: 0 0 0 0; 2 2 2 1; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 19
+
+            agent: agent_1
+            health: 18, PP: 6
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 0 0 0 0
+            field: 1 3; 2 1; 0 0; 0 0; 0 0
+            attackable: [1, 1, 0, 0, 0]
+            deck_num: 18
+fields: agent_0, agent_1; attackable: agent_0, agent_1; 
+
+----------------1----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 0 0 0 0; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 2 2; 1 1; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 19
+
+            agent: agent_1
+            health: 18, PP: 6
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 0 0 0 0
+            field: 1 3; 2 1; 0 0; 0 0; 0 0
+            attackable: [1, 1, 0, 0, 0]
+            deck_num: 18
 PP: agent_0; hands: agent_0; fields: agent_0; 
 
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 0 0 0 0; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 3; 1 1; 0 0; 0 0; 0 0
+            health: 16, PP: 0
+            hand: 0 0 0 0; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 2 2; 1 1; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
+            deck_num: 19
 
             agent: agent_1
-            health: 17, PP: 3
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 2 3 3 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 2; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 21
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
+            health: 18, PP: 7
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 3; 2 1; 0 0; 0 0; 0 0
+            attackable: [1, 1, 0, 0, 0]
+            deck_num: 17
+TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; decks: agent_1; 
 
-----------------6----------------
+----------------11----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 0 0 0 0; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 3; 1 1; 0 0; 0 0; 0 0
+            health: 16, PP: 0
+            hand: 0 0 0 0; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 2 2; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
+            deck_num: 19
 
             agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 2; 1 1; 0 0; 0 0
+            health: 18, PP: 7
+            hand: 2 2 2 1; 2 2 2 1; 4 3 4 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 2 1; 0 0; 0 0; 0 0
             attackable: [0, 1, 0, 0, 0]
-            deck_num: 21
+            deck_num: 17
+fields: agent_0, agent_1; attackable: agent_1; 
+
+----------------2----------------
+{'agent_1': 0.0, 'agent_0': 0.0}
+            agent: agent_0
+            health: 16, PP: 0
+            hand: 0 0 0 0; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 4; 2 2; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 19
+
+            agent: agent_1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 2 1; 4 3; 0 0; 0 0
+            attackable: [0, 1, 0, 0, 0]
+            deck_num: 17
 PP: agent_1; hands: agent_1; fields: agent_1; 
 
 ----------------15----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 20, PP: 0
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 0 0 0 0; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 1 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 1 1; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 20, PP: 4
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 1 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 1 1; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
-
-----------------17----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 4
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 4 4 1 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-fields: agent_0, agent_1; attackable: agent_0; 
-
-----------------5----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 3
-            hand: 3 3 3 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------0----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 21
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 20, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 1 1 1 4; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 0 0; 0 0; 0 0
-            attackable: [1, 1, 0, 0, 0]
-            deck_num: 20
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
-
-----------------20----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
             health: 16, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 2 3 3 1; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 1 1 1 4; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 20
-health: agent_0; attackable: agent_1; 
-
-----------------1----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 1 1 1 4; 0 0 0 0; 0 0 0 0
-            field: 2 3; 4 1; 2 3; 1 1; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 20
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------10----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 1 1 1 4; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 1; 2 3; 1 1; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------6----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 0
-            hand: 0 0 0 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 20
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 1; 2 3; 1 1; 0 0
+            hand: 0 0 0 0; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 2; 2 2; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 19
-PP: agent_1; hands: agent_1; fields: agent_1; decks: agent_1; 
+
+            agent: agent_1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 4 3; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 17
+fields: agent_0, agent_1; attackable: agent_1; 
 
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 4 4; 3 1; 0 0; 0 0; 0 0
+            health: 16, PP: 8
+            hand: 2 3 3 3; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 5 2; 2 2; 0 0; 0 0; 0 0
             attackable: [1, 1, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 1; 2 3; 1 1; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
-
-----------------10----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 2 3; 1 1; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-fields: agent_0, agent_1; attackable: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 5
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 3 1 3 5; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 2 3; 1 1; 0 0
-            attackable: [1, 0, 1, 1, 0]
-            deck_num: 18
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
-
-----------------6----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 2
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 1 1; 0 0
-            attackable: [1, 1, 1, 1, 0]
-            deck_num: 18
-PP: agent_1; hands: agent_1; fields: agent_1; attackable: agent_1; 
-
-----------------28----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 2
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 0 0; 0 0
-            attackable: [1, 1, 1, 0, 0]
-            deck_num: 18
-fields: agent_0, agent_1; attackable: agent_0, agent_1; 
-
-----------------2----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 16, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [1, 1, 1, 0, 0]
-            deck_num: 18
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------20----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 13, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [1, 0, 1, 0, 0]
-            deck_num: 18
-health: agent_0; attackable: agent_1; 
-
-----------------14----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 19
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [0, 0, 1, 0, 0]
-            deck_num: 18
-health: agent_0; attackable: agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 6
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 2 2 2 1; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
             deck_num: 18
 
             agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [0, 0, 1, 0, 0]
-            deck_num: 18
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
-
-----------------3----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 4
-            hand: 4 3 4 0; 5 4 5 0; 4 3 4 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [0, 0, 1, 0, 0]
-            deck_num: 18
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------2----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 4 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [0, 0, 1, 0, 0]
-            deck_num: 18
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 4 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 6
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 2; 0 0
-            attackable: [1, 1, 1, 1, 0]
-            deck_num: 17
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
-
-----------------28----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 4 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 6
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 3; 2 1; 0 0
-            attackable: [1, 1, 1, 0, 0]
-            deck_num: 17
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------23----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 4 1; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 6
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 2 2 1; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 0 0; 2 1; 0 0
-            attackable: [1, 1, 0, 0, 0]
-            deck_num: 17
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------4----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 4 1; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 3 1; 2 2; 2 1; 1 1
-            attackable: [1, 1, 0, 0, 0]
-            deck_num: 17
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------11----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 2 2; 2 1; 1 1
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 17
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------20----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 18
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 2 2; 2 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
-health: agent_0; attackable: agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 7
-            hand: 4 3 4 0; 5 4 5 0; 1 2 2 3; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 17
-
-            agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 2 2; 2 1; 1 1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 4 3; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 17
 TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
@@ -749,952 +562,442 @@ TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; dec
 ----------------11----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 7
-            hand: 4 3 4 0; 5 4 5 0; 1 2 2 3; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
+            health: 16, PP: 8
+            hand: 2 3 3 3; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 1 1 5 2; 0 0 0 0
+            field: 0 0; 2 2; 0 0; 0 0; 0 0
+            attackable: [0, 1, 0, 0, 0]
+            deck_num: 18
 
             agent: agent_1
-            health: 17, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 2 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
-fields: agent_0, agent_1; attackable: agent_0; 
-
-----------------2----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 5
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 3 3 3 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
             field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 17
+fields: agent_0, agent_1; attackable: agent_0; 
 
-            agent: agent_1
-            health: 15, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 2 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
-health: agent_1; PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------4----------------
+----------------7----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 2 2 2 1; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 3 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
+            health: 18, PP: 3
+            hand: 2 3 3 3; 0 0 0 0; 2 3 3 1; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 0 0; 0 0; 0 0
+            attackable: [0, 1, 0, 0, 0]
+            deck_num: 18
 
             agent: agent_1
-            health: 15, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 2 1; 1 1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 17
+health: agent_0; PP: agent_0; hands: agent_0; fields: agent_0; 
+
+----------------2----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 0
+            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 1 1; 0 0
+            attackable: [0, 1, 0, 0, 0]
+            deck_num: 18
+
+            agent: agent_1
+            health: 18, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 17
 PP: agent_0; hands: agent_0; fields: agent_0; 
 
-----------------5----------------
+----------------20----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 3 3; 2 2; 1 1; 0 0
+            health: 18, PP: 0
+            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 1 1; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
+            deck_num: 18
 
             agent: agent_1
-            health: 15, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 2 1; 1 1
+            health: 16, PP: 3
+            hand: 2 2 2 1; 2 2 2 1; 0 0 0 0; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 17
-PP: agent_0; hands: agent_0; fields: agent_0; 
+health: agent_1; attackable: agent_0; 
 
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 3 3; 2 2; 1 1; 0 0
+            health: 18, PP: 0
+            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 1 1; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
+            deck_num: 18
 
             agent: agent_1
-            health: 15, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 3 1; 0 0; 2 1; 1 1
-            attackable: [0, 1, 0, 1, 1]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 16
 TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
 
-----------------16----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 0
-            hand: 4 3 4 0; 5 4 5 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 0 0; 2 2; 1 1; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 17
-
-            agent: agent_1
-            health: 15, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 1 1
-            attackable: [0, 0, 0, 1, 1]
-            deck_num: 16
-fields: agent_0, agent_1; attackable: agent_1; 
-
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 9, PP: 8
-            hand: 4 3 4 0; 5 4 5 0; 1 1 1 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 0 0; 2 2; 1 1; 0 0
-            attackable: [1, 0, 1, 1, 0]
-            deck_num: 16
+            health: 18, PP: 8
+            hand: 2 3 3 3; 2 2 2 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 1 1; 0 0
+            attackable: [1, 1, 1, 1, 0]
+            deck_num: 17
 
             agent: agent_1
-            health: 15, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 1 1
-            attackable: [0, 0, 0, 1, 1]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 16
 TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
 
 ----------------1----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 3
-            hand: 4 3 4 0; 0 0 0 0; 1 1 1 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 2; 1 1; 0 0
-            attackable: [1, 0, 1, 1, 0]
-            deck_num: 16
+            health: 18, PP: 6
+            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 1 1; 2 2
+            attackable: [1, 1, 1, 1, 0]
+            deck_num: 17
 
             agent: agent_1
-            health: 15, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 1 1
-            attackable: [0, 0, 0, 1, 1]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 16
 PP: agent_0; hands: agent_0; fields: agent_0; 
 
-----------------25----------------
+----------------9----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 3
-            hand: 4 3 4 0; 0 0 0 0; 1 1 1 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 1; 1 1; 0 0
-            attackable: [1, 0, 0, 1, 0]
+            health: 18, PP: 6
+            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 1 3 2 4; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 0 0; 2 2; 2 3; 1 1; 2 2
+            attackable: [0, 1, 1, 1, 0]
+            deck_num: 17
+
+            agent: agent_1
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
+            deck_num: 16
+fields: agent_0, agent_1; attackable: agent_0; 
+
+----------------5----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 4
+            hand: 2 3 3 3; 4 4 1 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 1 1; 2 2
+            attackable: [0, 1, 1, 1, 0]
             deck_num: 16
 
             agent: agent_1
-            health: 15, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
-            deck_num: 16
-fields: agent_0, agent_1; attackable: agent_0, agent_1; 
-
-----------------14----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 3
-            hand: 4 3 4 0; 0 0 0 0; 1 1 1 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 1; 1 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
-            deck_num: 16
-
-            agent: agent_1
-            health: 14, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
-            deck_num: 16
-health: agent_1; attackable: agent_0; 
-
-----------------32----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 3
-            hand: 4 3 4 0; 0 0 0 0; 1 1 1 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 1; 1 1; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 16
-
-            agent: agent_1
-            health: 13, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
-            deck_num: 16
-health: agent_1; attackable: agent_0; 
-
-----------------2----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 16
 PP: agent_0; hands: agent_0; fields: agent_0; decks: agent_0; 
 
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 2; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
+            health: 18, PP: 4
+            hand: 2 3 3 3; 4 4 1 0; 0 0 0 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 1 1; 2 2
+            attackable: [0, 1, 1, 1, 0]
+            deck_num: 16
 
             agent: agent_1
-            health: 13, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 2 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 15
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; decks: agent_1; 
-
-----------------27----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 2 2 2 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------2----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 6
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 4 3 4 0; 2 1 2 5; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------3----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 2
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 2 1 2 5; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------4----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 1 1; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 4 3; 2 1; 0 0; 0 0
-            attackable: [0, 0, 1, 0, 0]
-            deck_num: 15
-PP: agent_1; hands: agent_1; fields: agent_1; attackable: agent_1; 
-
-----------------24----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 9, PP: 2
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-
-            agent: agent_1
-            health: 13, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-fields: agent_0, agent_1; attackable: agent_1; 
+TurnPlayer; turn: agent_1; decks: agent_1; 
 
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 9, PP: 8
-            hand: 4 3 4 0; 2 2 2 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 0 0; 1 1
-            attackable: [0, 1, 1, 0, 1]
-            deck_num: 14
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 1 1; 2 2
+            attackable: [1, 1, 1, 1, 1]
+            deck_num: 15
 
             agent: agent_1
-            health: 13, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
+            health: 16, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
             deck_num: 15
 TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
-
-----------------20----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 8
-            hand: 4 3 4 0; 2 2 2 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 2 1; 0 0; 1 1
-            attackable: [0, 0, 1, 0, 1]
-            deck_num: 14
-
-            agent: agent_1
-            health: 8, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 2 2; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-health: agent_1; attackable: agent_0; 
-
-----------------21----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 9, PP: 8
-            hand: 4 3 4 0; 2 2 2 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 0 0; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 1]
-            deck_num: 14
-
-            agent: agent_1
-            health: 8, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-fields: agent_0, agent_1; attackable: agent_0; 
 
 ----------------38----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 9, PP: 8
-            hand: 4 3 4 0; 2 2 2 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 5 4; 0 0; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 1 1; 2 2
+            attackable: [1, 1, 1, 1, 0]
+            deck_num: 15
 
             agent: agent_1
-            health: 7, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 0 0; 0 0; 0 0
+            health: 14, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 1 1; 0 0; 0 0; 0 0; 0 0
+            attackable: [1, 0, 0, 0, 0]
+            deck_num: 15
+health: agent_1; attackable: agent_0; 
+
+----------------27----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 0 0; 2 2
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 15
+
+            agent: agent_1
+            health: 14, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 15
+fields: agent_0, agent_1; attackable: agent_0, agent_1; 
+
+----------------20----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 0 0; 2 2
+            attackable: [1, 0, 1, 0, 0]
+            deck_num: 15
+
+            agent: agent_1
+            health: 12, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
             deck_num: 15
 health: agent_1; attackable: agent_0; 
 
-----------------2----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 11, PP: 3
-            hand: 4 3 4 0; 2 2 2 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 5 4; 0 0; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-
-            agent: agent_1
-            health: 7, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-health: agent_0; PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------1----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 11, PP: 1
-            hand: 4 3 4 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 5 4; 2 2; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-
-            agent: agent_1
-            health: 7, PP: 0
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 15
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 11, PP: 1
-            hand: 4 3 4 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 5 4; 2 2; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 14
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
-
-----------------16----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 11, PP: 1
-            hand: 4 3 4 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 2 2; 0 0; 1 1
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 11, PP: 8
-            hand: 4 3 4 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 2 2; 0 0; 1 1
-            attackable: [1, 0, 1, 0, 1]
-            deck_num: 13
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
-
-----------------0----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 11, PP: 4
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [1, 0, 1, 0, 1]
-            deck_num: 13
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 0 0 0 0; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 14
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 11, PP: 4
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [1, 0, 1, 0, 1]
-            deck_num: 13
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 3 2 4; 0 0 0 0; 1 1 5 2; 2 2 2 1; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 13
-TurnPlayer; turn: agent_1; hands: agent_1; decks: agent_1; 
-
 ----------------6----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 11, PP: 4
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [1, 0, 1, 0, 1]
-            deck_num: 13
-
-            agent: agent_1
-            health: 7, PP: 6
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 3 2 4; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 13
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------3----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 11, PP: 4
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [1, 0, 1, 0, 1]
-            deck_num: 13
-
-            agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-PP: agent_1; hands: agent_1; fields: agent_1; decks: agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 11, PP: 8
-            hand: 1 1 5 2; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [1, 1, 1, 0, 1]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 2; 1 1; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
-
-----------------9----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 11, PP: 8
-            hand: 1 1 5 2; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 3; 2 2; 0 0; 1 1
-            attackable: [0, 1, 1, 0, 1]
-            deck_num: 12
+            health: 18, PP: 5
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 0, 1, 1, 0]
+            deck_num: 15
 
             agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 1 1; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-fields: agent_0, agent_1; attackable: agent_0; 
-
-----------------0----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 13, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 1 1
-            attackable: [0, 1, 1, 0, 1]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 1 1; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-health: agent_0; PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------34----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 13, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 0 0; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-fields: agent_0, agent_1; attackable: agent_0; 
-
-----------------39----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 13, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 3 3 3 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 0 0; 1 3; 0 0; 0 0
-            attackable: [1, 0, 1, 0, 0]
-            deck_num: 11
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
-
-----------------26----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 8
-            hand: 2 3 3 3; 3 1 3 5; 4 4 1 0; 1 2 2 3; 3 3 3 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 0 0; 1 3; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 11
-health: agent_0; attackable: agent_1; 
-
-----------------2----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 2 2; 0 0; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 1 2 2 3; 3 3 3 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 2 1; 4 4; 1 3; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 11
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------11----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 7
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 1 2 2 3; 3 3 3 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 4 4; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-fields: agent_0, agent_1; attackable: agent_0, agent_1; 
-
-----------------4----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 4
-            hand: 2 3 3 3; 3 1 3 5; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------1----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 4 3; 0 0; 0 0; 0 0
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 3 1; 0 0
-            attackable: [0, 0, 0, 1, 0]
-            deck_num: 11
-PP: agent_1; hands: agent_1; fields: agent_1; attackable: agent_1; 
-
-----------------28----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 12
-
-            agent: agent_1
-            health: 7, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-fields: agent_0, agent_1; attackable: agent_0, agent_1; 
-
-----------------39----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
             health: 12, PP: 8
-            hand: 2 2 2 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [1, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 7, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
+            deck_num: 15
+PP: agent_0; hands: agent_0; fields: agent_0; attackable: agent_0; 
 
 ----------------14----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 12, PP: 8
-            hand: 2 2 2 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
+            health: 18, PP: 5
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [0, 0, 1, 1, 0]
+            deck_num: 15
 
             agent: agent_1
-            health: 6, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
+            health: 11, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
+            deck_num: 15
 health: agent_1; attackable: agent_0; 
 
-----------------0----------------
+----------------32----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 12, PP: 6
-            hand: 0 0 0 0; 3 1 3 5; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 6, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-PP: agent_0; hands: agent_0; fields: agent_0; 
-
-----------------1----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 2; 3 1; 0 0; 0 0
+            health: 18, PP: 5
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
             attackable: [0, 0, 1, 0, 0]
-            deck_num: 11
+            deck_num: 15
 
             agent: agent_1
-            health: 6, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 4; 1 3; 0 0; 0 0
+            health: 8, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-PP: agent_0; hands: agent_0; fields: agent_0; attackable: agent_0; 
-
-----------------22----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 6, PP: 1
-            hand: 2 3 3 3; 0 0 0 0; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 1; 1 3; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-fields: agent_0, agent_1; attackable: agent_0; 
+            deck_num: 15
+health: agent_1; attackable: agent_0; 
 
 ----------------39----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 1 1; 2 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
+            health: 18, PP: 5
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [0, 0, 1, 0, 0]
+            deck_num: 15
 
             agent: agent_1
-            health: 6, PP: 8
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 3; 4 1; 1 3; 0 0; 0 0
-            attackable: [1, 1, 1, 0, 0]
-            deck_num: 10
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
+            health: 8, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 14
+TurnPlayer; turn: agent_1; decks: agent_1; 
 
-----------------9----------------
+----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 2 2; 0 0; 0 0; 0 0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 1, 1]
+            deck_num: 14
+
+            agent: agent_1
+            health: 8, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
+            deck_num: 14
+TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
+
+----------------38----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 1, 0]
+            deck_num: 14
 
             agent: agent_1
             health: 6, PP: 8
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 1 2 2 3; 0 0 0 0; 1 1 5 2; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 4 1; 1 3; 0 0; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 10
-fields: agent_0, agent_1; attackable: agent_1; 
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 14
+health: agent_1; attackable: agent_0; 
+
+----------------32----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 14
+
+            agent: agent_1
+            health: 3, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 14
+health: agent_1; attackable: agent_0; 
+
+----------------39----------------
+{'agent_0': 0.0, 'agent_1': 0.0}
+            agent: agent_0
+            health: 18, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 14
+
+            agent: agent_1
+            health: 3, PP: 8
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 2 3 3 3; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 0 0; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 13
+TurnPlayer; turn: agent_1; decks: agent_1; 
 
 ----------------5----------------
-{'agent_0': 0.0, 'agent_1': 0.0}
-            agent: agent_0
-            health: 12, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 2 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 8, PP: 3
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 1 2 2 3; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 4 1; 1 3; 1 1; 0 0
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 10
-health: agent_1; PP: agent_1; hands: agent_1; fields: agent_1; 
-
-----------------3----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 10, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 2 2; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
+            health: 16, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 0, 0]
+            deck_num: 14
 
             agent: agent_1
-            health: 8, PP: 1
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 4 1; 1 3; 1 1; 1 2
-            attackable: [0, 1, 1, 0, 0]
-            deck_num: 10
+            health: 3, PP: 5
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 2 3; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 13
 health: agent_0; PP: agent_1; hands: agent_1; fields: agent_1; 
 
-----------------22----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 10, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 2 1; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 8, PP: 1
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 4 1; 1 1; 1 1; 1 2
-            attackable: [0, 1, 0, 0, 0]
-            deck_num: 10
-fields: agent_0, agent_1; attackable: agent_1; 
-
-----------------16----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
-            agent: agent_0
-            health: 10, PP: 3
-            hand: 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 11
-
-            agent: agent_1
-            health: 8, PP: 1
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 0 0; 1 1; 1 1; 1 2
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 10
-fields: agent_0, agent_1; attackable: agent_1; 
-
 ----------------39----------------
 {'agent_1': 0.0, 'agent_0': 0.0}
             agent: agent_0
-            health: 10, PP: 8
-            hand: 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 10
+            health: 16, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 4 3 4 0; 0 0 0 0; 0 0 0 0
+            field: 1 3; 2 2; 2 3; 3 1; 2 2
+            attackable: [1, 1, 1, 1, 1]
+            deck_num: 13
 
             agent: agent_1
-            health: 8, PP: 1
-            hand: 2 3 3 3; 1 1 1 2; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 0 0; 1 1; 1 1; 1 2
+            health: 3, PP: 5
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 2 3; 0 0; 0 0; 0 0; 0 0
             attackable: [0, 0, 0, 0, 0]
-            deck_num: 10
-TurnPlayer; turn: agent_0; PP: agent_0; hands: agent_0; decks: agent_0; 
+            deck_num: 13
+TurnPlayer; turn: agent_0; hands: agent_0; attackable: agent_0; decks: agent_0; 
 
-----------------39----------------
+----------------9----------------
 {'agent_0': 0.0, 'agent_1': 0.0}
             agent: agent_0
-            health: 10, PP: 8
-            hand: 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 10
+            health: 16, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 4 3 4 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 3 1; 2 2
+            attackable: [0, 1, 1, 1, 1]
+            deck_num: 13
 
             agent: agent_1
-            health: 8, PP: 8
-            hand: 2 3 3 3; 1 1 1 2; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 0 0; 1 1; 1 1; 1 2
-            attackable: [1, 0, 1, 1, 1]
-            deck_num: 9
-TurnPlayer; turn: agent_1; PP: agent_1; hands: agent_1; attackable: agent_1; decks: agent_1; 
+            health: 3, PP: 5
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 2 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 13
+fields: agent_0, agent_1; attackable: agent_0; 
 
-----------------26----------------
-{'agent_1': 0.0, 'agent_0': 0.0}
+----------------32----------------
+{'agent_0': 1.0, 'agent_1': -1.0}
             agent: agent_0
-            health: 9, PP: 8
-            hand: 1 3 2 4; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 0 0; 0 0; 0 0; 0 0; 0 0
-            attackable: [0, 0, 0, 0, 0]
-            deck_num: 10
+            health: 16, PP: 8
+            hand: 2 3 3 3; 4 4 1 0; 4 4 1 0; 1 1 1 2; 1 3 2 4; 3 3 3 0; 4 3 4 0; 0 0 0 0; 0 0 0 0
+            field: 1 1; 2 2; 2 3; 3 1; 2 2
+            attackable: [0, 1, 1, 0, 1]
+            deck_num: 13
 
             agent: agent_1
-            health: 8, PP: 8
-            hand: 2 3 3 3; 1 1 1 2; 3 3 3 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0
-            field: 3 2; 0 0; 1 1; 1 1; 1 2
-            attackable: [1, 0, 0, 1, 1]
-            deck_num: 9
-health: agent_0; attackable: agent_1; 
+            health: 0, PP: 5
+            hand: 2 2 2 1; 2 2 2 1; 1 1 1 4; 3 3 3 0; 5 4 5 0; 0 0 0 0; 1 1 5 2; 2 2 2 0; 5 4 5 0
+            field: 2 2; 0 0; 0 0; 0 0; 0 0
+            attackable: [0, 0, 0, 0, 0]
+            deck_num: 13
+health: agent_1; attackable: agent_0; 
 
