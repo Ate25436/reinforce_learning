@@ -13,7 +13,7 @@ gym_env = ss.pettingzoo_env_to_vec_env_v1(env)
 
 vec_env = VecMonitor(gym_env)
 
-model = DQN.load("dqn_tcg")
+model = DQN.load("dqn_tcg_no_punished")
 
 obs, _ = vec_env.reset()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
