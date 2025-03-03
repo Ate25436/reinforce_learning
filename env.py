@@ -56,7 +56,7 @@ class TCGEnv(ParallelEnv):
         self.decks = {'agent_0': copy.deepcopy(deck), 'agent_1': copy.deepcopy(deck)}
         self.trancated = {agent: False for agent in self.agents}
         self.steps = 0
-        self.agent_1_mode = "aggro" if random.randint(2) == 0 else "control"
+        self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
     
     def create_observation(self):
 
@@ -350,9 +350,10 @@ class TCGEnv_v2(gym.Env):
     }
 
     def __init__(self):
+        self.agents = ['agent_0', 'agent_1']
         self.action_space = Discrete(40)
         self.observation_space = Box(low=0, high=30, shape=(67, ), dtype=np.uint16)
-        self.LeadingPlayer = "agent_0" if random.randint(2) == 0 else "agent_1"
+        self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
         self.health = {self.LeadingPlayer: 20, self.SecondPlayer: 20}
@@ -364,7 +365,8 @@ class TCGEnv_v2(gym.Env):
         for i in range(15):
             deck += [self.card_map[f'card_{i}'] for _ in range(2)]
         self.decks = {self.LeadingPlayer: copy.deepcopy(deck), self.SecondPlayer: copy.deepcopy(deck)}
-        self.trancated = {self.LeadingPlayer: False, self.SecondPlayer: False}
+        self.trancated = False
+        self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
         
     def create_observation(self):
         concated_obs = []
@@ -380,17 +382,18 @@ class TCGEnv_v2(gym.Env):
     def step(self, action):
         if 0 <= action <= 8:
             obs, reward, done, info = self.play("agent_0", action)
-            return obs, reward, done, self.trancated
+            return obs, reward, done, self.trancated, info
         elif action == 39:
             obs, reward, done, info = self.end_turn("agent_0")
-            return obs, reward, done, self.trancated
+            return obs, reward, done, self.trancated, info
         else:
             obs, reward, done, info = self.attack("agent_0", (action - 9) // 6, (action - 9) % 6)
-            return obs, reward, done, self.trancated
+            return obs, reward, done, self.trancated, info
     
     def reset(self):
-        self.LeadingPlayer = "agent_0" if random.randint(2) == 0 else "agent_1"
+        self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
+        self.TurnPlayer = self.LeadingPlayer
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
         self.health = {self.LeadingPlayer: 20, self.SecondPlayer: 20}
         self.PP = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
@@ -403,10 +406,25 @@ class TCGEnv_v2(gym.Env):
         self.decks = {self.LeadingPlayer: copy.deepcopy(deck), self.SecondPlayer: copy.deepcopy(deck)}
         self.draw_n(self.LeadingPlayer, 5)
         self.draw_n(self.SecondPlayer, 5)
+        self.trancated = False
+        self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
+        self.hands["agent_1"][5] = [1, 2, 1, 0]
+        if self.LeadingPlayer == "agent_1":
+            self.agent_1_play(self.agent_1_mode)
         return self.create_observation()
     
+    def render(self, mode='human'):
+        if mode == 'human':
+            for agent in self.agents:
+                print(f'{agent}:')
+                print(f'health: {self.health[agent]}, PP: {self.PP[agent]}')
+                print(f'hand: {"; ".join(" ".join(str(item) for item in card) for card in self.hands[agent])}\n')
+                print(f'field: {"; ".join(" ".join(str(item) for item in card) for card in self.fields[agent])}')
+                print(f'attackable: {self.attackable[agent]}')
+                print(f'deck_num: {len(self.decks[agent])}')
+                print()
+
     def play(self, agent, card_index):
-        switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
         if self.hands[agent][card_index][self.CARD_HEALTH] == 0:
             observation = self.create_observation()
             return observation, self.rewards_map['punish'], False, {}
@@ -424,8 +442,44 @@ class TCGEnv_v2(gym.Env):
         self.fields[agent][field_index] = [card_info[self.CARD_ATTACK], card_info[self.CARD_HEALTH]]
         done, reward = self.activate_ability(agent, card_info, field_index=field_index)
         obs = self.create_observation()
-        return obs[agent], reward, done, {}
+        return obs, reward, done, {}
     
+    def activate_ability(self, agent, card_info, field_index=None):
+        switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
+        ability = card_info[self.CARD_ABILITY]
+        mana_ratio = (card_info[self.CARD_ATTACK] + card_info[self.CARD_HEALTH]) / 2 * card_info[self.CARD_PP]
+        match ability:
+            case 0:   #能力なし
+                return False, self.rewards_map['reward'] * mana_ratio
+            case 1:   #召喚
+                try:
+                    i = self.fields[agent].index([0, 0])
+                except ValueError:
+                    return False, self.rewards_map['reward'] * mana_ratio
+                self.fields[agent][i] = [1, 1]
+                return False, self.rewards_map['reward'] * (1 + mana_ratio)
+            case 2:   #治癒
+                old_health = self.health[agent]
+                self.health[agent] = min(self.health[agent] + 2, 20)
+                return False, self.rewards_map['reward'] * mana_ratio + self.rewards_map['reward'] * (self.health[agent] - old_health), 
+            case 3:   #攻撃
+                done = False
+                self.health[switch_agent] -= 2
+                if self.health[switch_agent] <= 0:
+                    done = True
+                    return done, {agent: self.rewards_map['win'], switch_agent: self.rewards_map['lose']}
+                return done, self.rewards_map['reward'] * (2 + mana_ratio), 
+            case 4:   #取得
+                done = self.draw_n(agent, 1)
+                if done:
+                    return done, {agent: self.rewards_map['lose'], switch_agent: self.rewards_map['win']}
+                return False,  self.rewards_map['reward'] * (1 + mana_ratio)
+            case 5:   #速攻
+                self.attackable[agent][field_index] = 1
+                return False, self.rewards_map['reward'] * (1 + mana_ratio), switch_agent
+            case _:  #その他
+                return False, 0.0
+
     def attack(self, agent, attacker_index, attacked_index):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
         attacked_destruction = False
@@ -478,6 +532,7 @@ class TCGEnv_v2(gym.Env):
     
     def end_turn(self, agent):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
+        self.TurnPlayer = switch_agent
         self.turn[switch_agent] += 1
         self.PP[switch_agent] = min(self.turn[switch_agent], 8)
         done = self.draw_n(switch_agent, 1)
@@ -493,8 +548,61 @@ class TCGEnv_v2(gym.Env):
         return observation, {agent: 0.0, switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
 
     def agent_1_play(self, mode):
-        pass
+        playable_cards_dict = {}
+        for i in range(9):
+            if self.hands["agent_1"][i][self.CARD_HEALTH] != 0 and self.hands["agent_1"][i][self.CARD_PP] <= self.PP["agent_1"]:
+                manaratio = (self.hands["agent_1"][i][self.CARD_ATTACK] + self.hands["agent_1"][i][self.CARD_HEALTH]) / (2 * self.hands["agent_1"][i][self.CARD_PP])
+                playable_cards_dict[i] = manaratio if self.hands['agent_1'][i][self.CARD_ABILITY] == 0 else manaratio + 1
+        playable_cards = [k for k, v in sorted(playable_cards_dict.items(), key=lambda x: x[1], reverse=True)]
+        for i in playable_cards:
+            if self.find_empty_field("agent_1") != -1 and self.hands["agent_1"][i][self.CARD_PP] <= self.PP["agent_1"]:
+                self.play("agent_1", i)
+        if mode == "aggro":
+            for i in range(5):
+                if self.attackable["agent_1"][i] == 1:
+                    self.attack("agent_1", i, 5)
+        elif mode == "control":
+            for i in range(5):
+                if self.attackable["agent_1"][i] == 1 and self.find_empty_field("agent_0") != -1:
+                    attacked = False
+                    for j in range(5):
+                        if self.fields["agent_0"][j][self.CARD_HEALTH] != 0 and self.fields["agent_0"][j][self.CARD_ATTACK] < self.fields["agent_1"][i][self.CARD_HEALTH]:
+                            self.attack("agent_1", i, j)
+                            attacked = True
+                            break
+                    if not attacked:
+                        self.attack("agent_1", i, 5)
+        self.end_turn("agent_1")
+                    
     
+    def find_empty_field(self, agent):
+        try:
+            i = self.fields[agent].index([0, 0])
+        except ValueError:
+            return -1
+        return i
+    
+    def find_empty_hand(self, agent):
+        try:
+            i = self.hands[agent].index([0, 0, 0, 0])
+        except ValueError:
+            return -1
+        return i
+
+    def draw_n(self, agent, n):
+        for _ in range(n):
+            deck = self.decks[agent]
+            if len(deck) == 0:
+                return True
+            else:
+                rnd.shuffle(deck)
+                card = deck.pop()
+                card_index = self.find_empty_hand(agent)
+                if card_index != -1:
+                    self.hands[agent][card_index] = card
+        return False
+    
+
 def base_n(num_10,n):
     str_n = ''
     while num_10:
@@ -508,8 +616,9 @@ def flatten_list(l):
     return [item for sublist in l for item in sublist]
 
 def test():
-    env = TCGEnv()
-    obs, reward, done, info = env.step({'agent_0': 0, 'agent_1': 0})
-    print(f"Step observation type: {type(obs['agent_0'])}")
+    env = TCGEnv_v2()
+    obs = env.reset()
+    env.render()
+    print(env.LeadingPlayer)
 if __name__ == '__main__':
     test()
