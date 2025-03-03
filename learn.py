@@ -9,7 +9,7 @@ from gymnasium.wrappers import TimeLimit
 from env import TCGEnv
 
 
-timesteps = 100000
+timesteps = 1000000
 
 def make_vec_env():
     env = TCGEnv()
@@ -41,7 +41,7 @@ def learn_model(timesteps, vec_env, model_name):
 
 def main():
     _, vec_env = make_vec_env()
-    model = learn_model(timesteps, vec_env, "dqn_tcg_no_punished")
+    model = learn_model(timesteps, vec_env, "dqn_tcg")
 
 if __name__ == "__main__":
     main()
