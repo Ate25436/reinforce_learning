@@ -1,13 +1,13 @@
+import gymnasium as gym
 import supersuit as ss
+from gymnasium.wrappers import TimeLimit
 from pettingzoo.utils.conversions import parallel_to_aec
 from pettingzoo.utils.wrappers import BaseWrapper
 from stable_baselines3 import DQN, PPO
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.vec_env import VecMonitor
-from gymnasium.wrappers import TimeLimit
 
-from env import TCGEnv
-
+from env import TCGEnv, TCGEnv_v2
 
 timesteps = 1000000
 
@@ -39,9 +39,15 @@ def learn_model(timesteps, vec_env, model_name):
     model.save(model_name)
     return model
 
+def make_v2_env():
+    env = TCGEnv_v2()
+    vec_env = VecMonitor(env)
+    return vec_env
+
 def main():
-    _, vec_env = make_vec_env()
-    model = learn_model(timesteps, vec_env, "dqn_tcg")
+    # _, vec_env = make_vec_env()
+    env = TCGEnv_v2()
+    model = learn_model(timesteps, env, "dqn_tcg_v2")
 
 if __name__ == "__main__":
     main()

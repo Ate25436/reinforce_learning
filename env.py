@@ -390,8 +390,9 @@ class TCGEnv_v2(gym.Env):
             obs, reward, done, info = self.attack("agent_0", (action - 9) // 6, (action - 9) % 6)
             return obs, reward, done, self.trancated, info
     
-    def reset(self):
-        self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
+    def reset(self, seed=None):
+        # self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
+        self.LeadingPlayer = "agent_0"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.TurnPlayer = self.LeadingPlayer
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
@@ -408,10 +409,9 @@ class TCGEnv_v2(gym.Env):
         self.draw_n(self.SecondPlayer, 5)
         self.trancated = False
         self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
-        self.hands["agent_1"][5] = [1, 2, 1, 0]
         if self.LeadingPlayer == "agent_1":
             self.agent_1_play(self.agent_1_mode)
-        return self.create_observation()
+        return self.create_observation(), {}
     
     def render(self, mode='human'):
         if mode == 'human':
@@ -467,16 +467,16 @@ class TCGEnv_v2(gym.Env):
                 self.health[switch_agent] -= 2
                 if self.health[switch_agent] <= 0:
                     done = True
-                    return done, {agent: self.rewards_map['win'], switch_agent: self.rewards_map['lose']}
+                    return done, self.rewards_map['win']
                 return done, self.rewards_map['reward'] * (2 + mana_ratio), 
             case 4:   #取得
                 done = self.draw_n(agent, 1)
                 if done:
-                    return done, {agent: self.rewards_map['lose'], switch_agent: self.rewards_map['win']}
+                    return done, self.rewards_map['lose']
                 return False,  self.rewards_map['reward'] * (1 + mana_ratio)
             case 5:   #速攻
                 self.attackable[agent][field_index] = 1
-                return False, self.rewards_map['reward'] * (1 + mana_ratio), switch_agent
+                return False, self.rewards_map['reward'] * (1 + mana_ratio)
             case _:  #その他
                 return False, 0.0
 
@@ -486,13 +486,13 @@ class TCGEnv_v2(gym.Env):
         attacker_destruction = False
         if self.fields[agent][attacker_index][self.CARD_HEALTH] == 0:  #エージェントが指定した自盤面にカードが存在しなかった場合
             observation = self.create_observation()
-            return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
+            return observation, self.rewards_map['punish'], False, {}
         if attacked_index <= 4 and self.fields[switch_agent][attacked_index][self.CARD_HEALTH] == 0:  #エージェントが指定した相手盤面にカードが存在しなかった場合
             observation = self.create_observation()
-            return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
+            return observation, self.rewards_map['punish'], False, {}
         if self.attackable[agent][attacker_index] == 0:  #エージェントが指定した自盤面のカードが攻撃可能でなかった場合
             observation = self.create_observation()
-            return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
+            return observation, self.rewards_map['punish'], False, {}
         if attacked_index <= 4:  #相手盤面のカードを攻撃するときの相手カードの処理
             self.fields[switch_agent][attacked_index][self.CARD_HEALTH] -= self.fields[agent][attacker_index][self.CARD_ATTACK]
         elif attacked_index == 5:  #相手プレイヤーを攻撃するときの処理
@@ -528,7 +528,7 @@ class TCGEnv_v2(gym.Env):
             else:
                 reward = self.rewards_map['reward'] * self.fields[agent][attacker_index][self.CARD_ATTACK]
         observation = self.create_observation()
-        return observation[agent], reward, done, {}
+        return observation, reward, done, {}
     
     def end_turn(self, agent):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
@@ -538,14 +538,18 @@ class TCGEnv_v2(gym.Env):
         done = self.draw_n(switch_agent, 1)
         if done:
             observation = self.create_observation()
-            return observation, {agent: self.rewards_map['win'], switch_agent:self.rewards_map['lose']}, {agent: done, switch_agent: done}, {agent: {}, switch_agent: {}}
+            return observation, self.rewards_map['win'], done, {}
         for i in range(5):
             if self.fields[switch_agent][i][self.CARD_HEALTH] != 0:
                 self.attackable[switch_agent][i] = 1
+        done = False
         if switch_agent == "agent_1":
-            self.agent_1_play(self.agent_1_mode)
+            done, reward = self.agent_1_play(self.agent_1_mode)
         observation = self.create_observation()
-        return observation, {agent: 0.0, switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
+        if done:
+            return observation, reward * -1, done, {}
+        else:
+            return observation, 0.0, done, {}
 
     def agent_1_play(self, mode):
         playable_cards_dict = {}
@@ -556,11 +560,15 @@ class TCGEnv_v2(gym.Env):
         playable_cards = [k for k, v in sorted(playable_cards_dict.items(), key=lambda x: x[1], reverse=True)]
         for i in playable_cards:
             if self.find_empty_field("agent_1") != -1 and self.hands["agent_1"][i][self.CARD_PP] <= self.PP["agent_1"]:
-                self.play("agent_1", i)
+                _, reward, done, _ = self.play("agent_1", i)
+                if done:
+                    return done, reward
         if mode == "aggro":
             for i in range(5):
                 if self.attackable["agent_1"][i] == 1:
-                    self.attack("agent_1", i, 5)
+                    _, reward, done, _ = self.attack("agent_1", i, 5)
+                    if done:
+                        return done, reward
         elif mode == "control":
             for i in range(5):
                 if self.attackable["agent_1"][i] == 1 and self.find_empty_field("agent_0") != -1:
@@ -571,9 +579,12 @@ class TCGEnv_v2(gym.Env):
                             attacked = True
                             break
                     if not attacked:
-                        self.attack("agent_1", i, 5)
+                        _, reward, done, _ = self.attack("agent_1", i, 5)
+                        if done:
+                            return done, reward
+
         self.end_turn("agent_1")
-                    
+        return False, 0.0
     
     def find_empty_field(self, agent):
         try:
@@ -602,6 +613,17 @@ class TCGEnv_v2(gym.Env):
                     self.hands[agent][card_index] = card
         return False
     
+    def env_to_text(self):
+        text_list = [
+            f'''
+            agent: {agent}
+            health: {self.health[agent]}, PP: {self.PP[agent]}
+            hand: {"; ".join(" ".join(str(item) for item in card) for card in self.hands[agent])}
+            field: {"; ".join(" ".join(str(item) for item in card) for card in self.fields[agent])}
+            attackable: {self.attackable[agent]}
+            deck_num: {len(self.decks[agent])}''' for agent in self.agents
+        ]
+        return '\n'.join(text_list)
 
 def base_n(num_10,n):
     str_n = ''
@@ -618,7 +640,13 @@ def flatten_list(l):
 def test():
     env = TCGEnv_v2()
     obs = env.reset()
-    env.render()
-    print(env.LeadingPlayer)
+    done = False
+    with open('log.txt', 'w') as f:
+        while not done:
+            action = random.randint(0, 39)
+            obs, reward, done, _, _ = env.step(action)
+            f.write('-' * 10 + str(action) + '-' * 10)
+            f.write(env.env_to_text())
+            f.write('\n\n')
 if __name__ == '__main__':
     test()
