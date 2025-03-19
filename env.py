@@ -16,7 +16,7 @@ class TCGEnv(ParallelEnv):
     CARD_PP = 2
     CARD_ABILITY = 3
     card_map = {
-        'card_0': [4, 4, 1, 0],
+        'card_0': [4, 4, 1, 0], # あえて強くした
         'card_1': [2, 2, 2, 0],
         'card_2': [3, 3, 3, 0],
         'card_3': [4, 3, 4, 0],
@@ -30,7 +30,32 @@ class TCGEnv(ParallelEnv):
         'card_11': [1, 2, 2, 3],
         'card_12': [2, 3, 3, 3],
         'card_13': [1, 1, 1, 2],
-        'card_14': [1, 1, 5, 2],
+        'card_14': [1, 1, 5, 2], # あえて弱くした
+        'card_15': [1, 4, 3, 2],
+        'card_16': [2, 1, 2, 2],
+        'card_17': [2, 2, 2, 2],
+        'card_18': [3, 2, 3, 2],
+        'card_19': [2, 5, 4, 2],
+        'card_20': [5, 2, 4, 5], # まあまあ強い
+        'card_21': [7, 1, 4, 0],
+        'card_22': [3, 3, 4, 5],
+        'card_23': [3, 1, 2, 3],
+        'card_24': [1, 3, 2, 2],
+        'card_25': [2, 2, 3, 2],
+        'card_26': [2, 6, 5, 2],
+        'card_27': [1, 2, 1, 0],
+        'card_28': [2, 1, 1, 0],
+        'card_29': [1, 1, 1, 1],
+        'card_30': [1, 1, 1, 3],
+        'card_31': [3, 2, 3, 1],
+        'card_32': [4, 2, 4, 3],
+        'card_33': [7, 2, 5, 3],
+        'card_34': [1, 1, 1, 5],
+        'card_35': [2, 7, 5, 1],
+        'card_36': [2, 6, 5, 4],
+        'card_37': [3, 7, 5, 0],
+        'card_38': [5, 3, 4, 0],
+        'card_39': [4, 3, 4, 2],
     }
     rewards_map = {
         'punish': 0.0,
@@ -50,10 +75,7 @@ class TCGEnv(ParallelEnv):
         self.hands = {'agent_0': [[0 for _ in range(4)] for _ in range(9)], 'agent_1': [[0 for _ in range(4)] for _ in range(9)]}
         self.fields = {'agent_0': [[0 for _ in range(2)] for _ in range(5)], 'agent_1': [[0 for _ in range(2)] for _ in range(5)]}
         self.attackable = {'agent_0': [0 for _ in range(5)], 'agent_1': [0 for _ in range(5)]}
-        deck = []
-        for i in range(15):
-            deck += [self.card_map[f'card_{i}'] for _ in range(2)]
-        self.decks = {'agent_0': copy.deepcopy(deck), 'agent_1': copy.deepcopy(deck)}
+        self.decks = {'agent_0': [], 'agent_1': []}
         self.trancated = {agent: False for agent in self.agents}
         self.steps = 0
         self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
@@ -367,6 +389,7 @@ class TCGEnv_v2(gym.Env):
         self.decks = {self.LeadingPlayer: copy.deepcopy(deck), self.SecondPlayer: copy.deepcopy(deck)}
         self.trancated = False
         self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
+        self.ready = False
         
     def create_observation(self):
         concated_obs = []
@@ -391,7 +414,6 @@ class TCGEnv_v2(gym.Env):
             return obs, reward, done, self.trancated, info
     
     def reset(self, seed=None):
-        # self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.LeadingPlayer = "agent_0"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.TurnPlayer = self.LeadingPlayer
@@ -638,15 +660,12 @@ def flatten_list(l):
     return [item for sublist in l for item in sublist]
 
 def test():
-    env = TCGEnv_v2()
-    obs = env.reset()
-    done = False
-    with open('log.txt', 'w') as f:
-        while not done:
-            action = random.randint(0, 39)
-            obs, reward, done, _, _ = env.step(action)
-            f.write('-' * 10 + str(action) + '-' * 10)
-            f.write(env.env_to_text())
-            f.write('\n\n')
+    env = TCGEnv()
+    cards = list(env.card_map.values())
+    for i in range(len(cards)):
+        if cards[i] in cards[i+1:]:
+            print(i)
+
+
 if __name__ == '__main__':
     test()

@@ -13,6 +13,7 @@ from tools.stop_watch import stop_watch
 def args():
     parser = argparse.ArgumentParser(description='DQN for TCG')
     parser.add_argument('--model_name', type=str, default='dqn_tcg', help='model name')
+    parser.add_argument('--iter_num', type=int, default=10, help='number of iterations')
     return parser.parse_args()
 
 def battle_and_write(model_name):
@@ -190,5 +191,6 @@ if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = args()
     model_name = args.model_name
-    win_rate = calculate_win_rate_with_random(model_name, iter_num=10)
+    iter_num = args.iter_num
+    win_rate = calculate_win_rate_with_random(model_name, iter_num=iter_num)
     print(win_rate)
