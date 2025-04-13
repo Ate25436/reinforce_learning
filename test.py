@@ -6,7 +6,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from stable_baselines3 import DQN
 
-from env import TCGEnv
+from env import TCGEnv, TCGEnv_v2
 from tools.stop_watch import stop_watch
 
 
@@ -185,12 +185,22 @@ def comparison_action(model_name, iter_num=100):
     plt.savefig('actions.png')
     plt.show()
     
-
+def test_deck_make(model_name):
+    env = TCGEnv_v2()
+    obs, _ = env.reset()
+    model = DQN.load(model_name)
+    action_list = []
+    for i in range(30):
+        action, _ = model.predict(obs)
+        obs, _, _, _, _ = env.step(action)
+        action_list.append(int(action))
+    print(env.decks)
+    return action_list
 
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = args()
     model_name = args.model_name
     iter_num = args.iter_num
-    win_rate = calculate_win_rate_with_random(model_name, iter_num=iter_num)
-    print(win_rate)
+    action_list = test_deck_make(model_name)
+    print(*action_list)

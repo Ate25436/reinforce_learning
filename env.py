@@ -68,7 +68,7 @@ class TCGEnv(ParallelEnv):
         self.possible_agents = self.agents[:]
         self.TurnPlayer = 'agent_0'
         self.action_spaces = {'agent_0': Discrete(40), 'agent_1': Discrete(40)}
-        self.observation_spaces = {'agent_0': Box(low=0, high=30, shape=(67, ), dtype=np.uint16), 'agent_1': Box(low=0, high=30, shape=(67, ), dtype=np.uint16)}
+        self.observation_spaces = {'agent_0': Box(low=0, high=30, shape=(68, ), dtype=np.uint16), 'agent_1': Box(low=0, high=30, shape=(68, ), dtype=np.uint16)}
         self.turn = {'agent_0': 1, 'agent_1': 0}
         self.health = {'agent_0': 20, 'agent_1': 20}
         self.PP = {'agent_0': 1, 'agent_1': 0}
@@ -340,7 +340,7 @@ class TCGEnv(ParallelEnv):
                 if card_index != -1:
                     self.hands[agent][card_index] = card
         return False
-    
+
 class TCGEnv_v2(gym.Env):
     metadata = {"render.modes": ["human"]}
     CARD_ATTACK = 0
@@ -348,7 +348,7 @@ class TCGEnv_v2(gym.Env):
     CARD_PP = 2
     CARD_ABILITY = 3
     card_map = {
-        'card_0': [4, 4, 1, 0],
+        'card_0': [4, 4, 1, 0], # あえて強くした
         'card_1': [2, 2, 2, 0],
         'card_2': [3, 3, 3, 0],
         'card_3': [4, 3, 4, 0],
@@ -362,7 +362,32 @@ class TCGEnv_v2(gym.Env):
         'card_11': [1, 2, 2, 3],
         'card_12': [2, 3, 3, 3],
         'card_13': [1, 1, 1, 2],
-        'card_14': [1, 1, 5, 2],
+        'card_14': [1, 1, 5, 2], # あえて弱くした
+        'card_15': [1, 4, 3, 2],
+        'card_16': [2, 1, 2, 2],
+        'card_17': [2, 2, 2, 2],
+        'card_18': [3, 2, 3, 2],
+        'card_19': [2, 5, 4, 2],
+        'card_20': [5, 2, 4, 5], # まあまあ強い
+        'card_21': [7, 1, 4, 0],
+        'card_22': [3, 3, 4, 5],
+        'card_23': [3, 1, 2, 3],
+        'card_24': [1, 3, 2, 2],
+        'card_25': [2, 2, 3, 2],
+        'card_26': [2, 6, 5, 2],
+        'card_27': [1, 2, 1, 0],
+        'card_28': [2, 1, 1, 0],
+        'card_29': [1, 1, 1, 1],
+        'card_30': [1, 1, 1, 3],
+        'card_31': [3, 2, 3, 1],
+        'card_32': [4, 2, 4, 3],
+        'card_33': [7, 2, 5, 3],
+        'card_34': [1, 1, 1, 5],
+        'card_35': [2, 7, 5, 1],
+        'card_36': [2, 6, 5, 4],
+        'card_37': [3, 7, 5, 0],
+        'card_38': [5, 3, 4, 0],
+        'card_39': [4, 3, 4, 2],
     }
     rewards_map = {
         'punish': 0.0,
@@ -374,7 +399,7 @@ class TCGEnv_v2(gym.Env):
     def __init__(self):
         self.agents = ['agent_0', 'agent_1']
         self.action_space = Discrete(40)
-        self.observation_space = Box(low=0, high=30, shape=(67, ), dtype=np.uint16)
+        self.observation_space = Box(low=0, high=30, shape=(68, ), dtype=np.uint16)
         self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
@@ -386,10 +411,11 @@ class TCGEnv_v2(gym.Env):
         deck = []
         for i in range(15):
             deck += [self.card_map[f'card_{i}'] for _ in range(2)]
-        self.decks = {self.LeadingPlayer: copy.deepcopy(deck), self.SecondPlayer: copy.deepcopy(deck)}
+        self.decks = {"agent_0": [], "agent_1": copy.deepcopy(deck)}
         self.trancated = False
         self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
         self.ready = False
+        self.inserted_card = {f"card_{i}": 0 for i in range(40)}
         
     def create_observation(self):
         concated_obs = []
@@ -400,18 +426,37 @@ class TCGEnv_v2(gym.Env):
         concated_obs += flatten_list(self.fields["agent_1"])
         concated_obs += self.attackable["agent_0"]
         concated_obs += [len(self.decks["agent_0"]), len(self.decks["agent_1"])]
+        concated_obs += [1 if self.ready else 0]
         return np.array(concated_obs).astype(np.uint16)
         
     def step(self, action):
-        if 0 <= action <= 8:
-            obs, reward, done, info = self.play("agent_0", action)
-            return obs, reward, done, self.trancated, info
-        elif action == 39:
-            obs, reward, done, info = self.end_turn("agent_0")
-            return obs, reward, done, self.trancated, info
+        # if action == 0:
+        #     action = 39
+        # else:
+        #     action -= 1
+        if self.ready:
+            if 0 <= action <= 8:
+                obs, reward, done, info = self.play("agent_0", action)
+                return obs, reward, done, self.trancated, info
+            elif action == 39:
+                obs, reward, done, info = self.end_turn("agent_0")
+                return obs, reward, done, self.trancated, info
+            else:
+                obs, reward, done, info = self.attack("agent_0", (action - 9) // 6, (action - 9) % 6)
+                return obs, reward, done, self.trancated, info
         else:
-            obs, reward, done, info = self.attack("agent_0", (action - 9) // 6, (action - 9) % 6)
-            return obs, reward, done, self.trancated, info
+            self.decks["agent_0"].append(self.card_map[f"card_{action}"])
+            self.inserted_card[f"card_{action}"] += 1
+            if len(self.decks["agent_0"]) == 30:
+                self.ready = True
+                self.draw_n("agent_0", 5)
+                self.game_start()
+            return self.create_observation(), 0.0, False, False, {}
+            
+    def game_start(self):
+        if self.LeadingPlayer == "agent_1":
+            self.agent_1_play(self.agent_1_mode)
+
     
     def reset(self, seed=None):
         self.LeadingPlayer = "agent_0"
@@ -426,13 +471,12 @@ class TCGEnv_v2(gym.Env):
         deck = []
         for i in range(15):
             deck += [self.card_map[f'card_{i}'] for _ in range(2)]
-        self.decks = {self.LeadingPlayer: copy.deepcopy(deck), self.SecondPlayer: copy.deepcopy(deck)}
-        self.draw_n(self.LeadingPlayer, 5)
-        self.draw_n(self.SecondPlayer, 5)
+        self.decks = {"agent_0": [], "agent_1": copy.deepcopy(deck)}
+        self.draw_n("agent_1", 5)
         self.trancated = False
         self.agent_1_mode = "aggro" if random.randrange(2) == 0 else "control"
-        if self.LeadingPlayer == "agent_1":
-            self.agent_1_play(self.agent_1_mode)
+        self.ready = False
+        self.inserted_card = {f"card_{i}": 0 for i in range(40)}
         return self.create_observation(), {}
     
     def render(self, mode='human'):
@@ -646,6 +690,19 @@ class TCGEnv_v2(gym.Env):
             deck_num: {len(self.decks[agent])}''' for agent in self.agents
         ]
         return '\n'.join(text_list)
+    
+    def t_save_env(self):
+        save_env = {
+            'TurnPlayer': self.TurnPlayer,
+            'turn': copy.deepcopy(self.turn),
+            'health': copy.deepcopy(self.health),
+            'PP': copy.deepcopy(self.PP),
+            'hands': copy.deepcopy(self.hands),
+            'fields': copy.deepcopy(self.fields),
+            'attackable': copy.deepcopy(self.attackable),
+            'decks': copy.deepcopy(self.decks)
+        }
+        return save_env
 
 def base_n(num_10,n):
     str_n = ''
@@ -660,11 +717,12 @@ def flatten_list(l):
     return [item for sublist in l for item in sublist]
 
 def test():
-    env = TCGEnv()
-    cards = list(env.card_map.values())
-    for i in range(len(cards)):
-        if cards[i] in cards[i+1:]:
-            print(i)
+    env = TCGEnv_v2()
+    env.reset()
+    env.render()
+    for i in range(30):
+        env.step(i)
+    env.render()
 
 
 if __name__ == '__main__':

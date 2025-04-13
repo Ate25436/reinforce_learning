@@ -9,7 +9,13 @@ from stable_baselines3.common.vec_env import VecMonitor
 
 from env import TCGEnv, TCGEnv_v2
 
-timesteps = 1000000
+import argparse
+
+def args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model_name", type=str, default="dqn_tcg")
+    parser.add_argument("--timesteps", type=int, default=1000000)
+    return parser.parse_args()
 
 def make_vec_env():
     env = TCGEnv()
@@ -47,7 +53,9 @@ def make_v2_env():
 def main():
     # _, vec_env = make_vec_env()
     env = TCGEnv_v2()
-    model = learn_model(timesteps, env, "dqn_tcg_v2")
+    timesteps = args().timesteps
+    model_name = args().model_name
+    model = learn_model(timesteps, env, model_name)
 
 if __name__ == "__main__":
     main()
