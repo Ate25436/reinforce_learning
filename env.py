@@ -398,7 +398,7 @@ class TCGEnv_v2(gym.Env):
 
     def __init__(self):
         self.agents = ['agent_0', 'agent_1']
-        self.action_space = Discrete(40)
+        self.action_space = Discrete(50)
         self.observation_space = Box(low=0, high=30, shape=(68, ), dtype=np.uint16)
         self.LeadingPlayer = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
@@ -441,17 +441,22 @@ class TCGEnv_v2(gym.Env):
             elif action == 39:
                 obs, reward, done, info = self.end_turn("agent_0")
                 return obs, reward, done, self.trancated, info
-            else:
+            elif 9 <= action <= 38:
                 obs, reward, done, info = self.attack("agent_0", (action - 9) // 6, (action - 9) % 6)
                 return obs, reward, done, self.trancated, info
+            else:
+                return self.create_observation(), self.rewards_map['punish'], False, False, {}
         else:
-            self.decks["agent_0"].append(self.card_map[f"card_{action}"])
-            self.inserted_card[f"card_{action}"] += 1
-            if len(self.decks["agent_0"]) == 30:
-                self.ready = True
-                self.draw_n("agent_0", 5)
-                self.game_start()
-            return self.create_observation(), 0.0, False, False, {}
+            if action < 40:
+                return self.create_observation(), self.rewards_map['punish'], False, False, {}
+            else:
+                self.decks["agent_0"].append(self.card_map[f"card_{action - 40}"])
+                self.inserted_card[f"card_{action - 40}"] += 1
+                if len(self.decks["agent_0"]) == 30:
+                    self.ready = True
+                    self.draw_n("agent_0", 5)
+                    self.game_start()
+                return self.create_observation(), 0.0, False, False, {}
             
     def game_start(self):
         if self.LeadingPlayer == "agent_1":

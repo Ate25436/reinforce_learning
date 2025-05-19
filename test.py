@@ -190,17 +190,18 @@ def test_deck_make(model_name):
     obs, _ = env.reset()
     model = DQN.load(model_name)
     action_list = []
-    for i in range(30):
+    while env.ready == False:
         action, _ = model.predict(obs)
         obs, _, _, _, _ = env.step(action)
-        action_list.append(int(action))
-    print(env.decks)
+        if action >= 40:
+            action_list.append(int(action))
+    print(env.decks['agent_0'])
     return action_list
 
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = args()
-    model_name = args.model_name
+    model_name = 'models/' + args.model_name
     iter_num = args.iter_num
     action_list = test_deck_make(model_name)
     print(*action_list)
