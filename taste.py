@@ -5,13 +5,13 @@ from collections import Counter
 import numpy as np
 from matplotlib import pyplot as plt
 from stable_baselines3 import DQN
-
-from env import TCGEnv, TCGEnv_v2
+from field import TCGEnv
+from env import TCGEnv_v2
 from tools.stop_watch import stop_watch
 
 from tqdm import tqdm
 
-def args():
+def make_args():
     parser = argparse.ArgumentParser(description='DQN for TCG')
     parser.add_argument('--model_name', type=str, default='models/dqn_tcg', help='model name')
     parser.add_argument('--mode', type=str, default='battle', help='log or calculate win rate')
@@ -111,7 +111,7 @@ def calculate_win_rate_with_random(model_name='dqn_tcg', iter_num=100):      # ã
     return win / iter_num
 
 if __name__ == '__main__':
-    args = args()
+    args = make_args()
     model_name = 'models/' + args.model_name
     mode = args.mode
     if mode == 'calculate':

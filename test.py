@@ -6,11 +6,12 @@ import numpy as np
 from matplotlib import pyplot as plt
 from stable_baselines3 import DQN
 
-from env import TCGEnv, TCGEnv_v2
+from field import TCGEnv
+from env import TCGEnv_v2
 from tools.stop_watch import stop_watch
 
 
-def args():
+def make_args():
     parser = argparse.ArgumentParser(description='DQN for TCG')
     parser.add_argument('--model_name', type=str, default='dqn_tcg', help='model name')
     parser.add_argument('--iter_num', type=int, default=10, help='number of iterations')
@@ -174,7 +175,7 @@ def comparison_action(model_name, iter_num=100):
     all_actions = []
     all_randoms = []
     for _ in range(10):
-        _, action_list, random_list = battle(model_name)
+        action_list, random_list = battle(model_name)
         all_actions.extend(action_list)
         all_randoms.extend(random_list)
     actions_counter = Counter(all_actions)
@@ -198,9 +199,17 @@ def test_deck_make(model_name):
     print(env.decks['agent_0'])
     return action_list
 
+def test_base_model():
+    env = TCGEnv()
+    model_1 = DQN.load('models/potential_base')
+    model_2 = DQN.load('models/potential_base_2')
+    obs, _ = env.reset()
+    
+    return action_list
+
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
-    args = args()
+    args = make_args()
     model_name = 'models/' + args.model_name
     iter_num = args.iter_num
     action_list = test_deck_make(model_name)

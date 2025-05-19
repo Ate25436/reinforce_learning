@@ -1,3 +1,5 @@
+import argparse
+
 import gymnasium as gym
 import supersuit as ss
 from gymnasium.wrappers import TimeLimit
@@ -7,9 +9,9 @@ from stable_baselines3 import DQN, PPO
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.vec_env import VecMonitor
 
-from env import TCGEnv, TCGEnv_v2
+from env import TCGEnv_v2
+from field import TCGEnv
 
-import argparse
 
 def args():
     parser = argparse.ArgumentParser()
