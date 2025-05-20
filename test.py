@@ -3,6 +3,7 @@ import random
 from collections import Counter
 
 import numpy as np
+import pandas as pd
 from matplotlib import pyplot as plt
 from stable_baselines3 import DQN
 
@@ -199,18 +200,18 @@ def test_deck_make(model_name):
     print(env.decks['agent_0'])
     return action_list
 
-def test_base_model():
-    env = TCGEnv()
-    model_1 = DQN.load('models/potential_base')
-    model_2 = DQN.load('models/potential_base_2')
-    obs, _ = env.reset()
-    
-    return action_list
+def test_base_model(iter_num=100):
+    model_name_1 = 'models/potential_base'
+    model_name_2 = 'models/potential_base_2'
+    win_rates = {'model_1': [], 'model_2': []}
+    for _ in range(iter_num):
+        win_rate_1 = calculate_win_rate_with_random(model_name_1, iter_num=10)
+        win_rate_2 = calculate_win_rate_with_random(model_name_2, iter_num=10)
+        win_rates['model_1'].append(win_rate_1)
+        win_rates['model_2'].append(win_rate_2)
+    pd.to_pickle(win_rates, 'pickle/win_rates.pkl')
 
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = make_args()
-    model_name = 'models/' + args.model_name
-    iter_num = args.iter_num
-    action_list = test_deck_make(model_name)
-    print(*action_list)
+    test_base_model(args.iter_num)

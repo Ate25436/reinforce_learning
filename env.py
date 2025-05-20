@@ -65,8 +65,8 @@ class TCGEnv_v2(gym.Env):
 
     def __init__(self):
         self.agents: List[str] = ['agent_0', 'agent_1']
-        self.action_space = Discrete(50)
-        self.observation_space = Box(low=0, high=30, shape=(68, ), dtype=np.uint16)
+        self.action_space = Discrete(40)
+        self.observation_space = Box(low=0, high=30, shape=(67, ), dtype=np.uint16)
         self.LeadingPlayer: str = "agent_0" if random.randrange(2) == 0 else "agent_1"
         self.SecondPlayer: str = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
@@ -93,7 +93,6 @@ class TCGEnv_v2(gym.Env):
         concated_obs += flatten_list(self.fields["agent_1"])
         concated_obs += self.attackable["agent_0"]
         concated_obs += [len(self.decks["agent_0"]), len(self.decks["agent_1"])]
-        concated_obs += [1 if self.ready else 0]
         return np.array(concated_obs).astype(np.uint16)
         
     def step(self, action):
