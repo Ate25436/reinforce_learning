@@ -57,7 +57,7 @@ class TCGEnv_v2(gym.Env):
         'card_39': [4, 3, 4, 2],
     }
     rewards_map = {
-        'punish': -1e-2,
+        'punish': -1e-4,
         'reward': 0.0,
         'win': 1.0,
         'lose': -1.0

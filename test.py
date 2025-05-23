@@ -2,14 +2,16 @@ import argparse
 import random
 from collections import Counter
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
-from stable_baselines3 import DQN
 from scipy import stats as st
-from field import TCGEnv
+from stable_baselines3 import DQN
+from tqdm import tqdm
+
 from env import TCGEnv_v2
+from field import TCGEnv
 from tools.stop_watch import stop_watch
 
 
@@ -203,19 +205,21 @@ def test_deck_make(model_name):
     return action_list
 
 def test_base_model(iter_num=10):
-    model_name_1 = 'models/potential_base'
-    model_name_2 = 'models/potential_base_2'
+    model_name_1 = 'models/potential_base_2'
+    model_name_2 = 'models/potential_base_2_p'
     win_rates = {'model_1': [], 'model_2': []}
-    for _ in range(iter_num):
-        win_info_1 = calculate_win_rate_with_random(model_name_1, iter_num=10)
-        win_info_2 = calculate_win_rate_with_random(model_name_2, iter_num=10)
-        win_rates['model_1'].append(win_info_1)
-        win_rates['model_2'].append(win_info_2)
+    with tqdm(total=iter_num) as pbar:
+        for _ in range(iter_num):
+            win_info_1 = calculate_win_rate_with_random(model_name_1, iter_num=10)
+            win_info_2 = calculate_win_rate_with_random(model_name_2, iter_num=10)
+            win_rates['model_1'].append(win_info_1)
+            win_rates['model_2'].append(win_info_2)
+            pbar.update(1)
     pd.to_pickle(win_rates, 'pickle/win_rates.pkl')
 
 def test_base_model_turn(iter_num=30):
-    model_name_1 = 'models/potential_base'
-    model_name_2 = 'models/potential_base_2'
+    model_name_1 = 'models/potential_base_2'
+    model_name_2 = 'models/potential_base_2_p'
     win_rates = {'model_1': [], 'model_2': []}
     for _ in range(iter_num):
         _, turns = battle_with_random(model_name_1)
