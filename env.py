@@ -126,7 +126,7 @@ class TCGEnv_v2(gym.Env):
 
     
     def reset(self, seed=None):
-        self.LeadingPlayer = "agent_0"
+        self.LeadingPlayer = np.random.choice(self.agents)
         self.SecondPlayer = "agent_0" if self.LeadingPlayer == "agent_1" else "agent_1"
         self.TurnPlayer = self.LeadingPlayer
         self.turn = {self.LeadingPlayer: 1, self.SecondPlayer: 0}
@@ -138,7 +138,7 @@ class TCGEnv_v2(gym.Env):
         deck = []
         for i in range(15):
             deck += [self.card_map[f'card_{i}'] for _ in range(2)]
-        self.decks = {"agent_0": [], "agent_1": copy.deepcopy(deck)}
+        self.decks = {"agent_0": copy.deepcopy(deck), "agent_1": copy.deepcopy(deck)}
         self.draw_n("agent_0", 5)
         self.draw_n("agent_1", 5)
         self.trancated = False
@@ -159,6 +159,20 @@ class TCGEnv_v2(gym.Env):
                 print(f'deck_num: {len(self.decks[agent])}')
                 print()
 
+    def relocate_hand(self, agent):
+        for i in range(1, 9):
+            if self.hands[agent][i - 1] == [0, 0, 0, 0] and self.hands[agent][i] != [0, 0, 0, 0]:
+                self.hands[agent][i - 1] = self.hands[agent][i]
+                self.hands[agent][i] = [0, 0, 0, 0]
+
+    def relocate_field(self, agent):
+        for i in range(1, 5):
+            if self.fields[agent][i - 1] == [0, 0] and self.fields[agent][i] != [0, 0]:
+                self.fields[agent][i - 1] = self.fields[agent][i]
+                self.attackable[agent][i - 1] = self.attackable[agent][i]
+                self.fields[agent][i] = [0, 0]
+                self.attackable[agent][i] = 0
+
     def play(self, agent, card_index):
         if self.hands[agent][card_index][self.CARD_HEALTH] == 0:
             observation = self.create_observation()
@@ -177,6 +191,7 @@ class TCGEnv_v2(gym.Env):
         self.fields[agent][field_index] = [card_info[self.CARD_ATTACK], card_info[self.CARD_HEALTH]]
         done, reward = self.activate_ability(agent, card_info, field_index=field_index)
         obs = self.create_observation()
+        self.relocate_hand(agent)
         return obs, reward, done, {}
     
     def activate_ability(self, agent: str, card_info, field_index: Union[int, None]=None):
@@ -242,10 +257,12 @@ class TCGEnv_v2(gym.Env):
             self.fields[switch_agent][attacked_index] = [0, 0]
             self.attackable[switch_agent][attacked_index] = 0
             attacked_destruction = True
+            self.relocate_field(switch_agent)
         if self.fields[agent][attacker_index][self.CARD_HEALTH] <= 0:  #自盤面のカードが破壊された場合
             self.fields[agent][attacker_index] = [0, 0]
             self.attackable[agent][attacker_index] = 0
             attacker_destruction = True
+            self.relocate_field(agent)
         self.attackable[agent][attacker_index] = 0
         done = False
         if attacked_index <= 4:
@@ -390,8 +407,13 @@ def test():
     env = TCGEnv_v2()
     env.reset()
     env.render()
-    for i in range(30):
-        env.step(i)
+    env.hands["agent_0"][0] = [2, 2, 1, 0]
+    env.step(0)
+    env.render()
+    env.fields["agent_1"][1] = [2, 2]
+    env.fields["agent_1"][0] = [1, 1]
+    env.attackable["agent_1"][0] = 1
+    env.attack("agent_1", 0, 0)
     env.render()
 
 

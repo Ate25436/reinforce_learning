@@ -5,11 +5,11 @@ from pettingzoo.utils.conversions import parallel_to_aec
 from stable_baselines3.common.vec_env import VecMonitor
 from stable_baselines3 import DQN
 
-from env import TCGEnv, TCGEnv_v2
+from env import TCGEnv_v2
 
 env = TCGEnv_v2()
 
-model = DQN.load("models/deck_10_with_punish_2")
+model = DQN.load("models/potential_base")
 
 obs, _ = env.reset()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

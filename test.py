@@ -204,18 +204,15 @@ def test_deck_make(model_name):
     print(env.decks['agent_0'])
     return action_list
 
-def test_base_model(iter_num=10):
-    model_name_1 = 'models/potential_base_2'
-    model_name_2 = 'models/potential_base_2_p'
-    win_rates = {'model_1': [], 'model_2': []}
+def test_base_model(model_name: str, iter_num=10):
+    model_info = {'win_rate': [], 'turns': []}
     with tqdm(total=iter_num) as pbar:
         for _ in range(iter_num):
-            win_info_1 = calculate_win_rate_with_random(model_name_1, iter_num=10)
-            win_info_2 = calculate_win_rate_with_random(model_name_2, iter_num=10)
-            win_rates['model_1'].append(win_info_1)
-            win_rates['model_2'].append(win_info_2)
+            win_info = calculate_win_rate_with_random('models/' + model_name, iter_num=10)
+            model_info['win_rate'].append(win_info[0])
+            model_info['turns'].append(win_info[1])
             pbar.update(1)
-    pd.to_pickle(win_rates, 'pickle/win_rates.pkl')
+    pd.to_pickle(model_info, 'pickle/' + model_name + '.pkl')
 
 def test_base_model_turn(iter_num=30):
     model_name_1 = 'models/potential_base_2'
@@ -270,7 +267,19 @@ def check_turns(pickle_name: str):
     print(f'p_1: {p_1:.3f}')
     print(f'p_2: {p_2:.3f}')
 
+def check_model_info(model_name: str):
+    model_info = pd.read_pickle('pickle/' + model_name + '.pkl')
+    print(model_info)
+    print('win rate:', np.mean(model_info['win_rate']))
+    print('turns:', np.mean(model_info['turns']))
+    print('std win rate:', np.std(model_info['win_rate'], ddof=1))
+    print('std turns:', np.std(model_info['turns'], ddof=1))
+    plt.plot(model_info['win_rate'])
+    plt.show()
+
+
+
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = make_args()
-    check_win_rate('pickle/win_rates.pkl')
+    test_base_model(args.model_name, args.iter_num)
