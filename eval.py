@@ -5,7 +5,7 @@ from pettingzoo.utils.conversions import parallel_to_aec
 from stable_baselines3.common.vec_env import VecMonitor
 from stable_baselines3 import DQN
 
-from env import TCGEnv_v2
+from envs.tcg_env import TCGEnv_v2
 
 env = TCGEnv_v2()
 

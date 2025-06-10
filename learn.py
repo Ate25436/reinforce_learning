@@ -1,8 +1,10 @@
 import argparse
 
+import gymnasium as gym
 from stable_baselines3 import DQN
 
-from env import TCGEnv_v2
+import custom_envs
+from epsilon import ExponentialSchedule
 from tools.stop_watch import stop_watch
 
 
@@ -12,6 +14,14 @@ def args():
     parser.add_argument("--timesteps", type=int, default=1000000)
     return parser.parse_args()
 
+class CustomDQN(DQN):
+    def __init__(self, *args, epsilon_schedule=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.epsilon_schedule = epsilon_schedule or ExponentialSchedule()
+
+    def _on_step(self) -> bool:
+        self.exploration_rate = self.epsilon_schedule(self._n_updates)
+        return True
 
 # 5. SB3 で学習
 @stop_watch
@@ -27,7 +37,6 @@ def learn_model(timesteps, vec_env, model_name):
     target_update_interval=1000,
     exploration_fraction=0.1,
     exploration_initial_eps=1.0,
-    exploration_final_eps=50000 / timesteps,
     learning_starts=10000,
     verbose=1,
     device="cuda"
@@ -38,7 +47,7 @@ def learn_model(timesteps, vec_env, model_name):
 
 def main():
     # _, vec_env = make_vec_env()
-    env = TCGEnv_v2()
+    env = gym.make('MakeDeck-v0')
     timesteps = args().timesteps
     model_name = args().model_name
     model = learn_model(timesteps, env, model_name)

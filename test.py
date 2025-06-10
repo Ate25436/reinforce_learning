@@ -2,16 +2,17 @@ import argparse
 import random
 from collections import Counter
 
+import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from custom_envs.envs.field import TCGEnv
+from custom_envs.envs.tcg_env import TCGEnv_v2
 from matplotlib import pyplot as plt
 from scipy import stats as st
 from stable_baselines3 import DQN
 from tqdm import tqdm
 
-from env import TCGEnv_v2
-from field import TCGEnv
 from tools.stop_watch import stop_watch
 
 
@@ -204,15 +205,20 @@ def test_deck_make(model_name):
     print(env.decks['agent_0'])
     return action_list
 
-def test_base_model(model_name: str, iter_num=10):
+def test_base_model(model_name: str, iter_num=10, mode='random'):
     model_info = {'win_rate': [], 'turns': []}
     with tqdm(total=iter_num) as pbar:
         for _ in range(iter_num):
-            win_info = calculate_win_rate_with_random('models/' + model_name, iter_num=10)
+            if mode == 'random':
+                win_info = calculate_win_rate_with_random('models/' + model_name, iter_num=10)
+            elif mode == 'rule':
+                win_info = calculate_model_vs_rule('models/' + model_name, iter_num=10)
+            else:
+                raise ValueError("mode must be 'random' or 'rule'")
             model_info['win_rate'].append(win_info[0])
             model_info['turns'].append(win_info[1])
             pbar.update(1)
-    pd.to_pickle(model_info, 'pickle/' + model_name + '.pkl')
+    pd.to_pickle(model_info, 'pickle/' + model_name + f'_{mode}' + '.pkl')
 
 def test_base_model_turn(iter_num=30):
     model_name_1 = 'models/potential_base_2'
@@ -277,9 +283,58 @@ def check_model_info(model_name: str):
     plt.plot(model_info['win_rate'])
     plt.show()
 
+def model_vs_rule(model_name: str):
+    env = TCGEnv_v2()
+    model = DQN.load(model_name)
+    obs, _ = env.reset()
+    env.render()
+    terminated = False
+    i = 0
+    winner = ""
+    while not terminated:
+        action, _ = model.predict(obs)
+        obs, reward, terminated, _, _ = env.step(action)
+        if terminated:
+            if reward == 1.0:
+                winner = 'model'
+            elif reward == -1.0:
+                winner = 'rule'
+            else:
+                winner = 'draw'
+            break
+        i += 1
+    return winner, i
+        
+def calculate_model_vs_rule(model_name: str, iter_num: int=10):
+    wins = 0
+    turns = 0
+    for _ in range(iter_num):
+        winner, i = model_vs_rule(model_name)
+        turns += i
+        if winner == 'model':
+            wins += 1
+        if winner == 'draw':
+            raise ValueError("Draw occurred, please check the model or the rule.")
+    return wins / iter_num, turns / iter_num
 
+def check_TCGEnv_v2(model_name: str = 'base_model'):
+    env = gym.make('TCGEnv-v2')
+    obs, _ = env.reset()
+    model = DQN.load('models/' + model_name)
+    done = False
+    while not done:
+        action, _ = model.predict(obs)
+        obs, reward, done, _, _ = env.step(action)
+        if done:
+            if reward == 1.0:
+                print('Model wins!')
+            elif reward == -1.0:
+                print('Rule wins!')
+            else:
+                print('Draw!')
+                print(action)
 
 if __name__ == '__main__':
     # battle_and_write('dqn_tcg')
     args = make_args()
-    test_base_model(args.model_name, args.iter_num)
+    check_TCGEnv_v2()

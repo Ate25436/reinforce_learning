@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: custom_envs
+Version: 0.0.2
+Requires-Dist: gymnasium>=1.0.0
+Requires-Dist: numpy>=2.0.0
+Dynamic: requires-dist

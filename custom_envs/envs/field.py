@@ -1,9 +1,12 @@
-from gymnasium.spaces import Discrete, Box
-from pettingzoo import ParallelEnv
-import numpy as np
-from numpy import random as rnd
 import copy
 import random
+
+import numpy as np
+from gymnasium.spaces import Box, Discrete
+from numpy import random as rnd
+from pettingzoo import ParallelEnv
+from custom_envs.envs.utils import flatten_list
+
 
 class TCGEnv(ParallelEnv):
     metadata = {"render.mode": ["human"]}
@@ -358,5 +361,3 @@ class TCGEnv(ParallelEnv):
                     self.hands[agent][card_index] = card
         return False
     
-def flatten_list(l):
-    return [item for sublist in l for item in sublist]

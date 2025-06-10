@@ -5,8 +5,7 @@ from collections import Counter
 import numpy as np
 from matplotlib import pyplot as plt
 from stable_baselines3 import DQN
-from field import TCGEnv
-from env import TCGEnv_v2
+from custom_envs.envs.field import TCGEnv
 from tools.stop_watch import stop_watch
 
 from tqdm import tqdm
