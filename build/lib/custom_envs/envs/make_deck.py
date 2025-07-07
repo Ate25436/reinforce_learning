@@ -88,7 +88,7 @@ class MakeDeck(gym.Env):
                 reward = self.rewards_map['win']
             elif winner == "rule":
                 reward = self.rewards_map['lose']
-            return self.create_observation(), reward, True, False, {}
+            return self.create_observation(), reward, True, False, {"deck": self.deck, "inserted_card": self.inserted_card}
         else:
             return self.create_observation(), 0.0, False, False, {}
     
@@ -105,17 +105,20 @@ class MakeDeck(gym.Env):
         env = TCGEnv_v2()
         obs, _ = env.reset(deck=self.deck)
         done = False
-        winner = ""
         while not done:
             action, _ = self.model.predict(obs)
             obs, reward, done, _, _ = env.step(action)
             if done:
-                print(reward)
                 if reward == 1.0:
                     winner = "model"
                 elif reward == -1.0:
                     winner = "rule"
-            break
-        assert winner != "", reward
+                break
         return winner
+    
+    def get_card_map(self):
+        return self.card_map
+    
+    def get_deck(self):
+        return self.deck
 

@@ -42,7 +42,7 @@ def learn_model(timesteps, vec_env, model_name):
     device="cuda"
 )
     model.learn(total_timesteps=timesteps)
-    model.save('models/' + model_name)
+    model.save('models/' + model_name + '_' + str(timesteps))
     return model
 
 def main():

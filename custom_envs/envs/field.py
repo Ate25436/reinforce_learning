@@ -116,7 +116,7 @@ class TCGEnv(ParallelEnv):
             obs, reward, done, info = self.attack(agent, (action - 9) // 6, (action - 9) % 6)
             return obs, reward, done, self.trancated, info
 
-    def reset(self, seed=None, options=None):
+    def reset(self, seed=None, options={}):
         self.TurnPlayer = 'agent_0'
         self.turn = {'agent_0': 1, 'agent_1': 0}
         self.health = {'agent_0': 20, 'agent_1': 20}
@@ -127,7 +127,15 @@ class TCGEnv(ParallelEnv):
         deck = []
         for i in range(15):
             deck += [self.card_map[f'card_{i}'] for _ in range(2)]
-        self.decks = {'agent_0': copy.deepcopy(deck), 'agent_1': copy.deepcopy(deck)}
+        self.decks = {'agent_0': [], 'agent_1': []}
+        if options is not None and 'deck' in options:
+            for agent in self.agents:
+                if agent in options['deck']:
+                    self.decks[agent] = copy.deepcopy(options['deck'][agent])
+                else:
+                    self.decks[agent] = copy.deepcopy(deck)
+        else:
+            self.decks = {'agent_0': copy.deepcopy(deck), 'agent_1': copy.deepcopy(deck)}
         self.draw_n('agent_0', 5)
         self.draw_n('agent_1', 5)
         return self.create_observation(), {agent: {} for agent in self.agents}

@@ -110,6 +110,7 @@ class TCGEnv_v2(gym.Env):
             reward = self.rewards_map['punish']
             done = False
             info = {}
+        assert done == False or reward in [1.0, -1.0], f"action: {action}"
         return obs, reward, done, self.trancated, info
         # else:
         #     if action < 40:
@@ -399,6 +400,10 @@ class TCGEnv_v2(gym.Env):
         }
         return save_env
 
+    def get_TurnPlayer(self):
+        return self.TurnPlayer
+    
+    
 
 
 def test():

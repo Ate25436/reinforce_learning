@@ -88,7 +88,7 @@ class MakeDeck(gym.Env):
                 reward = self.rewards_map['win']
             elif winner == "rule":
                 reward = self.rewards_map['lose']
-            return self.create_observation(), reward, True, False, {}
+            return self.create_observation(), reward, True, False, {"deck": self.deck, "inserted_card": self.inserted_card}
         else:
             return self.create_observation(), 0.0, False, False, {}
     
@@ -115,4 +115,10 @@ class MakeDeck(gym.Env):
                     winner = "rule"
                 break
         return winner
+    
+    def get_card_map(self):
+        return self.card_map
+    
+    def get_deck(self):
+        return self.deck
 

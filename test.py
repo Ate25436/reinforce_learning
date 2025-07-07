@@ -18,260 +18,218 @@ from tools.stop_watch import stop_watch
 
 def make_args():
     parser = argparse.ArgumentParser(description='DQN for TCG')
-    parser.add_argument('--model_name', type=str, default='dqn_tcg', help='model name')
+    parser.add_argument('--model_name', type=str, default='base_model', help='model name')
     parser.add_argument('--iter_num', type=int, default=10, help='number of iterations')
+    parser.add_argument('--deck_name', type=str, default='', help='deck name')
+    parser.add_argument('--mode', type=str, default='random', choices=['random', 'rule'],
+                        help='mode to test the model, random or rule')
     return parser.parse_args()
+class BattleAgents:
 
-def battle_and_write(model_name):
-    env = TCGEnv()
-    model = DQN.load(model_name)
+    def __init__(self, model_name):
+        self.model_path = 'models/' + model_name
 
-    obs, _ = env.reset()
-    env.render()
-    done = False
-    i = 0
-    winner = ""
-    with open('log.txt', 'w') as f:
-        f.write('')
-        while not done:
+    def battle_and_write(self):
+        env = TCGEnv()
+        model = DQN.load(self.model_path)
+
+        obs, _ = env.reset()
+        env.render()
+        done = False
+        i = 0
+        winner = ""
+        with open('log.txt', 'w') as f:
+            f.write('')
+            while not done:
+                agent = env.TurnPlayer
+                switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
+                save_env_before = env.t_save_env()
+                action, _ = model.predict(obs[agent])
+                action_dict = {agent: action, switch_agent: 0}
+                obs, rewards, terminated, _, _ = env.step(action_dict)
+                save_env_after = env.t_save_env()
+
+                if save_env_before != save_env_after:
+                    f.write('-' * 16 + str(action) + '-' * 16 + '\n')
+                    f.write(str(rewards))
+                    f.write(env.env_to_text() + '\n')
+                    for key in save_env_before.keys():
+                        if save_env_before[key] != save_env_after[key] and key == 'TurnPlayer':
+                            f.write(key + '; ')
+                        elif save_env_before[key] != save_env_after[key]:
+                            change_agents = []
+                            for agent in env.agents:
+                                if save_env_before[key][agent] != save_env_after[key][agent]:
+                                    change_agents.append(agent)
+                            f.write(key + ': ' + ', '.join(change_agents)  + '; ')
+                    f.write('\n\n')
+                    i += 1
+                done = terminated[agent]
+                if done:
+                    winner = "agent_0" if rewards["agent_0"] == 1.0 else "agent_1"
+            print(i)
+            return winner
+
+    def battle(self):
+        action_list = []
+        env = TCGEnv()
+        model = DQN.load(self.model_path)
+
+        obs, _ = env.reset()
+        env.render()
+        done = False
+        i = 0
+        winner = ""
+        while True:
             agent = env.TurnPlayer
             switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
             save_env_before = env.t_save_env()
             action, _ = model.predict(obs[agent])
+            action_list.append(int(action))
             action_dict = {agent: action, switch_agent: 0}
             obs, rewards, terminated, _, _ = env.step(action_dict)
             save_env_after = env.t_save_env()
-
             if save_env_before != save_env_after:
-                f.write('-' * 16 + str(action) + '-' * 16 + '\n')
-                f.write(str(rewards))
-                f.write(env.env_to_text() + '\n')
-                for key in save_env_before.keys():
-                    if save_env_before[key] != save_env_after[key] and key == 'TurnPlayer':
-                        f.write(key + '; ')
-                    elif save_env_before[key] != save_env_after[key]:
-                        change_agents = []
-                        for agent in env.agents:
-                            if save_env_before[key][agent] != save_env_after[key][agent]:
-                                change_agents.append(agent)
-                        f.write(key + ': ' + ', '.join(change_agents)  + '; ')
-                f.write('\n\n')
                 i += 1
             done = terminated[agent]
             if done:
                 winner = "agent_0" if rewards["agent_0"] == 1.0 else "agent_1"
+                break
         print(i)
-        return winner
+        return winner, action_list
 
-def battle(model_name):
-    action_list = []
-    env = TCGEnv()
-    model = DQN.load(model_name)
+class BattleRandomAgent:
 
-    obs, _ = env.reset()
-    env.render()
-    done = False
-    i = 0
-    winner = ""
-    while True:
-        agent = env.TurnPlayer
-        switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
-        save_env_before = env.t_save_env()
-        action, _ = model.predict(obs[agent])
-        action_list.append(int(action))
-        action_dict = {agent: action, switch_agent: 0}
-        obs, rewards, terminated, _, _ = env.step(action_dict)
-        save_env_after = env.t_save_env()
-        if save_env_before != save_env_after:
-            i += 1
-        done = terminated[agent]
-        if done:
-            winner = "agent_0" if rewards["agent_0"] == 1.0 else "agent_1"
-            break
-    print(i)
-    return winner, action_list
-
-def battle_memory_actions(model_name):
-    action_list = []
-    random_list = []
-    env = TCGEnv()
-    model = DQN.load(model_name)
-
-    obs, _ = env.reset()
-    env.render()
-    done = False
-    i = 0
-    winner = ""
-    while True:
-        agent = env.TurnPlayer
-        switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
-        save_env_before = env.t_save_env()
-        action, _ = model.predict(obs[agent])
-        action_list.append(int(action))
-        random_list.append(random.randrange(0, 40))
-        action_dict = {agent: action, switch_agent: 0}
-        obs, rewards, terminated, _, _ = env.step(action_dict)
-        save_env_after = env.t_save_env()
-        if save_env_before != save_env_after:
-            i += 1
-        done = terminated[agent]
-        if done:
-            winner = "agent_0" if rewards["agent_0"] == 1.0 else "agent_1"
-            break
-    print(i)
-    return winner, action_list, random_list
-
-def battle_with_random(model_name):
-    env = TCGEnv()
-    model = DQN.load(model_name)
-    random_agent = random.choice(['agent_0', 'agent_1'])
-    
-    obs, _ = env.reset()
-    env.render()
-    done = False
-    i = 0
-    winner = ""
-    while True:
-        agent = env.TurnPlayer
-        switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
-        save_env_before = env.t_save_env()
-        if agent == random_agent:
-            action = random.randrange(0, 40)
+    def __init__(self, model_name='base_model', deck_name=''):
+        self.model_name = model_name
+        self.model_path = 'models/' + model_name
+        self.deck_name = deck_name
+        if deck_name != '':
+            self.deck = pd.read_pickle('decks/' + deck_name + '.pkl')
         else:
-            action, _ = model.predict(obs[agent])
-        action_dict = {agent: action, switch_agent: 0}
-        obs, rewards, terminated, _, _ = env.step(action_dict)
-        save_env_after = env.t_save_env()
-        i += 1
-        done = terminated[agent]
-        if done:
-            winner = "agent_0" if rewards["agent_0"] == 1.0 else("agent_1" if rewards["agent_1"] == 1.0 else "draw")
-            break
-    print(i)
-    print('random_agent:', random_agent)
-    print('winner:', winner)
-    if winner == random_agent:
-        winner = 'random'
-    else:
-        winner = 'model'
-    return winner, i
+            self.deck = []
+        
 
-@stop_watch
-def calculate_win_rate(model_name='dqn_tcg', iter_num=100):
-    win = 0
-    for _ in range(iter_num):
-        winner, _, _ = battle_memory_actions(model_name)
-        if winner == 'agent_0':
-            win += 1
-    return win / iter_num
-
-def calculate_win_rate_with_random(model_name='dqn_tcg', iter_num=100):
-    win = 0
-    turn_sum = 0
-    for _ in range(iter_num):
-        winner, i = battle_with_random(model_name)
-        turn_sum += i
-        if winner == 'model':
-            win += 1
-        elif winner == 'draw':
-            print('here')
-    return win / iter_num, turn_sum / iter_num
-
-def comparison_action(model_name, iter_num=100):
-    all_actions = []
-    all_randoms = []
-    for _ in range(10):
-        action_list, random_list = battle(model_name)
-        all_actions.extend(action_list)
-        all_randoms.extend(random_list)
-    actions_counter = Counter(all_actions)
-    randoms_counter = Counter(all_randoms)
-    fig, ax = plt.subplots(1, 2)
-    ax[0].bar(actions_counter.keys(), actions_counter.values())
-    ax[1].bar(randoms_counter.keys(), randoms_counter.values())
-    plt.savefig('actions.png')
-    plt.show()
-    
-def test_deck_make(model_name):
-    env = TCGEnv_v2()
-    obs, _ = env.reset()
-    model = DQN.load(model_name)
-    action_list = []
-    while env.ready == False:
-        action, _ = model.predict(obs)
-        obs, _, _, _, _ = env.step(action)
-        if action >= 40:
-            action_list.append(int(action))
-    print(env.decks['agent_0'])
-    return action_list
-
-def test_base_model(model_name: str, iter_num=10, mode='random'):
-    model_info = {'win_rate': [], 'turns': []}
-    with tqdm(total=iter_num) as pbar:
-        for _ in range(iter_num):
-            if mode == 'random':
-                win_info = calculate_win_rate_with_random('models/' + model_name, iter_num=10)
-            elif mode == 'rule':
-                win_info = calculate_model_vs_rule('models/' + model_name, iter_num=10)
+    def battle_with_random(self):
+        env = TCGEnv()
+        model = DQN.load(self.model_path)
+        random_agent = random.choice(['agent_0', 'agent_1'])
+        model_agent = 'agent_1' if random_agent == 'agent_0' else 'agent_0'
+        info = {'deck':{model_agent: self.deck}}
+        obs, _ = env.reset(options=info)
+        env.render()
+        done = False
+        i = 0
+        winner = ""
+        while True:
+            agent = env.TurnPlayer
+            switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
+            if agent == random_agent:
+                action = random.randrange(0, 40)
             else:
-                raise ValueError("mode must be 'random' or 'rule'")
-            model_info['win_rate'].append(win_info[0])
-            model_info['turns'].append(win_info[1])
-            pbar.update(1)
-    pd.to_pickle(model_info, 'pickle/' + model_name + f'_{mode}' + '.pkl')
+                action, _ = model.predict(obs[agent])
+            action_dict = {agent: action, switch_agent: 0}
+            obs, rewards, terminated, _, _ = env.step(action_dict)
+            i += 1
+            done = terminated[agent]
+            if done:
+                winner = "agent_0" if rewards["agent_0"] == 1.0 else("agent_1" if rewards["agent_1"] == 1.0 else "draw")
+                break
+        print(i)
+        print('random_agent:', random_agent)
+        print('winner:', winner)
+        if winner == random_agent:
+            winner = 'random'
+        else:
+            winner = 'model'
+        return winner, i
 
-def test_base_model_turn(iter_num=30):
-    model_name_1 = 'models/potential_base_2'
-    model_name_2 = 'models/potential_base_2_p'
-    win_rates = {'model_1': [], 'model_2': []}
-    for _ in range(iter_num):
-        _, turns = battle_with_random(model_name_1)
-        win_rates['model_1'].append(turns)
-        _, turns = battle_with_random(model_name_2)
-        win_rates['model_2'].append(turns)
-    pd.to_pickle(win_rates, 'pickle/turns.pkl')
+    def calculate_win_rate_with_random(self, iter_num=100):
+        win = 0
+        turn_sum = 0
+        for _ in range(iter_num):
+            winner, i = self.battle_with_random()
+            turn_sum += i
+            if winner == 'model':
+                win += 1
+        return win / iter_num, turn_sum / iter_num
 
-def check_win_rate(pickle_name):
-    win_rates_pickle = pd.read_pickle(pickle_name)
-    win_rates = {key: [int(tuple[0] * 10) for tuple in value] for key, value in win_rates_pickle.items()}
-    turn_mean = {key: [tuple[1] for tuple in value] for key, value in win_rates_pickle.items()}
-    print(win_rates)
-    print('win rates:', *[f"{key}: {np.mean(value)}" for key, value in win_rates.items()])
-    print('turn mean:', *[f"{key}: {np.mean(value)}" for key, value in turn_mean.items()])
-    
-    x_1 = pd.Series(win_rates['model_1'])
-    x_2 = pd.Series(win_rates['model_2'])
-    x_label = list(range(11))
-    x_1_value_count = x_1.value_counts()
+class BattleRuleAgent:
 
-    y_label = [x_1_value_count.get(i, 0) for i in x_label]
-    plt.bar(x_label, y_label)
-    plt.show()
-    _, p_1 = st.shapiro(x_1)
-    _, p_2 = st.shapiro(x_2)
-    print(f'p_1: {p_1:.3f}')
-    print(f'p_2: {p_2:.3f}')
-    print(f'var_1: {x_1.std(ddof=1):.3f}')
-    print(f'var_2: {x_2.std(ddof=1):.3f}')
+    def __init__(self, model_name='base_model', deck_name=''):
+        self.model_name = model_name
+        self.model_path = 'models/' + model_name
+        self.deck_name = deck_name
+        if deck_name != '':
+            self.deck = pd.read_pickle('decks/' + deck_name + '.pkl')
+        else:
+            self.deck = []
+        
 
-    _, lev = st.levene(x_1, x_2, center='mean')
-    print(f'levene p: {lev:.3f}')
+    def model_vs_rule(self):
+        env = TCGEnv_v2()
+        model = DQN.load(self.model_path)
+        if self.deck != []:
+            obs, _ = env.reset(deck=self.deck)
+        else:
+            obs, _ = env.reset()
+        env.render()
+        terminated = False
+        i = 0
+        winner = ""
+        while not terminated:
+            action, _ = model.predict(obs)
+            obs, reward, terminated, _, _ = env.step(action)
+            if terminated:
+                if reward == 1.0:
+                    winner = 'model'
+                elif reward == -1.0:
+                    winner = 'rule'
+                else:
+                    winner = 'draw'
+                break
+            i += 1
+        return winner, i
+        
+    def calculate_model_vs_rule(self, iter_num: int=10):
+        wins = 0
+        turns = 0
+        for _ in range(iter_num):
+            winner, i = self.model_vs_rule()
+            turns += i
+            if winner == 'model':
+                wins += 1
+            if winner == 'draw':
+                raise ValueError("Draw occurred, please check the model or the rule.")
+        return wins / iter_num, turns / iter_num
 
-    _, p_l = st.ttest_ind(x_1, x_2, equal_var=True)
-    print(f'ttest p: {p_l}')
-    _, p_w = st.ttest_ind(x_1, x_2, equal_var=False)
-    print(f'welch ttest p: {p_w}')
+class TestModel(BattleRandomAgent, BattleRuleAgent):
 
-def check_turns(pickle_name: str):
-    turns_pickle = pd.read_pickle(pickle_name)
-    x_1 = pd.Series(turns_pickle['model_1'])
-    x_2 = pd.Series(turns_pickle['model_2'])
-    print(turns_pickle)
-    print('turns:', *[f"{key}: {np.mean(value)}" for key, value in turns_pickle.items()])
-    _, p_1 = st.shapiro(x_1)
-    _, p_2 = st.shapiro(x_2)
-    print(f'p_1: {p_1:.3f}')
-    print(f'p_2: {p_2:.3f}')
+    NUM_OF_GAMES = 10
+
+    def __init__(self, model_name='base_model', deck_name='', mode='random', iter_num=10):
+        BattleRandomAgent.__init__(self, model_name, deck_name)
+        BattleRuleAgent.__init__(self, model_name, deck_name)
+        self.mode = mode
+        self.iter_num = iter_num
+
+    def test_base_model(self):
+        model_info = {'win_rate': [], 'turns': []}
+        with tqdm(total=self.iter_num) as pbar:
+            for _ in range(self.iter_num):
+                if self.mode == 'random':
+                    win_info = self.calculate_win_rate_with_random(iter_num=self.NUM_OF_GAMES)
+                elif self.mode == 'rule':
+                    win_info = self.calculate_model_vs_rule(iter_num=self.NUM_OF_GAMES)
+                else:
+                    raise ValueError("mode must be 'random' or 'rule'")
+                model_info['win_rate'].append(win_info[0])
+                model_info['turns'].append(win_info[1])
+                pbar.update(1)
+        if self.deck != []:
+            pd.to_pickle(model_info, 'pickle/' + self.model_name + f'_{self.mode}_{self.deck_name}' + '.pkl')
+        else:
+            pd.to_pickle(model_info, 'pickle/' + self.model_name + f'_{self.mode}' + '.pkl')
 
 def check_model_info(model_name: str):
     model_info = pd.read_pickle('pickle/' + model_name + '.pkl')
@@ -283,58 +241,28 @@ def check_model_info(model_name: str):
     plt.plot(model_info['win_rate'])
     plt.show()
 
-def model_vs_rule(model_name: str):
-    env = TCGEnv_v2()
-    model = DQN.load(model_name)
-    obs, _ = env.reset()
-    env.render()
-    terminated = False
-    i = 0
-    winner = ""
-    while not terminated:
-        action, _ = model.predict(obs)
-        obs, reward, terminated, _, _ = env.step(action)
-        if terminated:
-            if reward == 1.0:
-                winner = 'model'
-            elif reward == -1.0:
-                winner = 'rule'
-            else:
-                winner = 'draw'
-            break
-        i += 1
-    return winner, i
+class MakeDeck:
+    def __init__(self, model_name='make_deck_3000'):
+        self.model_name = model_name
+        self.model_path = 'models/' + self.model_name
         
-def calculate_model_vs_rule(model_name: str, iter_num: int=10):
-    wins = 0
-    turns = 0
-    for _ in range(iter_num):
-        winner, i = model_vs_rule(model_name)
-        turns += i
-        if winner == 'model':
-            wins += 1
-        if winner == 'draw':
-            raise ValueError("Draw occurred, please check the model or the rule.")
-    return wins / iter_num, turns / iter_num
 
-def check_TCGEnv_v2(model_name: str = 'base_model'):
-    env = gym.make('TCGEnv-v2')
-    obs, _ = env.reset()
-    model = DQN.load('models/' + model_name)
-    done = False
-    while not done:
-        action, _ = model.predict(obs)
-        obs, reward, done, _, _ = env.step(action)
-        if done:
-            if reward == 1.0:
-                print('Model wins!')
-            elif reward == -1.0:
-                print('Rule wins!')
-            else:
-                print('Draw!')
-                print(action)
+    def test_make_deck(self):
+        env = gym.make('MakeDeck-v0')
+        model = DQN.load(self.model_path)
+        obs, _ = env.reset()
+        done = False
+        while not done:
+            action, _ = model.predict(obs)
+            obs, reward, done, _, info = env.step(action)
+            if done:
+                deck = info['deck']
+                inserted_card = info['inserted_card']
+                break
+        pd.to_pickle(deck, 'decks/' + self.model_name + '.pkl')
 
 if __name__ == '__main__':
-    # battle_and_write('dqn_tcg')
     args = make_args()
-    check_TCGEnv_v2()
+
+    test_model_instance = TestModel(model_name=args.model_name, deck_name=args.deck_name, mode=args.mode, iter_num=args.iter_num)
+    test_model_instance.test_base_model()
