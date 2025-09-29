@@ -1,0 +1,4563 @@
+[
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "initial"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 2,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            3,
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            0,
+            0
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_13",
+                "card_10"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            4
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 2,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            2,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 20,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            2
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 1,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            1,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 3,
+            "hand": [
+                "card_3",
+                "card_6",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 20,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    3,
+                    "card_6"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 0,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    3,
+                    "card_6"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            0,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    3,
+                    "card_6"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    3,
+                    "card_6"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            0,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            2,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 4,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_9",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_9",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 19,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            4
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 18,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            0,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 16,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            1,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 15,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            2,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 3,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            3,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            2,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    1,
+                    "card_9"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            3,
+            2
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            4,
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 16,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            1,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 5,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_1",
+                "card_10"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_1"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    3,
+                    1,
+                    "card_10"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 13,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    3,
+                    1,
+                    "card_10"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 12,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    3,
+                    1,
+                    "card_10"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            0,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 4,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    3,
+                    1,
+                    "card_10"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            1,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    3,
+                    1,
+                    "card_10"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    1,
+                    "card_13"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            2,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 12,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            4,
+            0
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 8,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            1,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 0,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            0,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 6,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2",
+                "card_0"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 5,
+            "hand": [
+                "card_3",
+                "card_2",
+                "card_2"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            3
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 9,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "attack",
+            2,
+            5
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    3,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            3,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    2,
+                    2,
+                    "card_1"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            2,
+            0
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            1,
+            2
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 7,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 7,
+            "hand": [
+                "card_3",
+                "card_11",
+                "card_2"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 5,
+            "hand": [
+                "card_3",
+                "card_2"
+            ],
+            "field": [
+                [
+                    1,
+                    2,
+                    "card_11"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    1,
+                    2,
+                    "card_11"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_1",
+        "event": [
+            "play_card",
+            2
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 8,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    1,
+                    2,
+                    "card_11"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": "end_turn"
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    2,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    1,
+                    2,
+                    "card_11"
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            4,
+            2
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 7,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            1,
+            0
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    3,
+                    3,
+                    "card_2"
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            4
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 6,
+            "hand": [
+                "card_0",
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            4,
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 4,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "play_card",
+            1
+        ]
+    },
+    {
+        "agent_0": {
+            "health": 5,
+            "PP": 5,
+            "hand": [
+                "card_0",
+                "card_0"
+            ],
+            "field": [
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    1,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ],
+                [
+                    4,
+                    4,
+                    "card_0"
+                ]
+            ]
+        },
+        "agent_1": {
+            "health": 0,
+            "PP": 2,
+            "hand": [
+                "card_3"
+            ],
+            "field": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        "TurnPlayer": "agent_0",
+        "event": [
+            "attack",
+            0,
+            5
+        ]
+    }
+]

@@ -25,7 +25,7 @@ for k, v in card_map.items():
         "health": v[1],
         "cost": v[2],
         "ability": v[3],
-        "img": f"card_visual/card/{k}.png"
+        "img": f"card/{k}.png"
     }
     card_dict[k] = card_info
 
