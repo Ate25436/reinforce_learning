@@ -12,6 +12,7 @@ from matplotlib import pyplot as plt
 from scipy import stats as st
 from stable_baselines3 import DQN
 from tqdm import tqdm
+import json
 
 from tools.stop_watch import stop_watch
 
@@ -26,9 +27,12 @@ def make_args():
     return parser.parse_args()
 class BattleAgents:
 
-    def __init__(self, model_name):
+    def __init__(self, model_name, deck_name=''):
         self.model_path = 'models/' + model_name
-
+        if deck_name != '':
+            self.deck = pd.read_pickle('decks/' + deck_name + '.pkl')
+        else:
+            self.deck = []
     def battle_and_write(self):
         env = TCGEnv()
         model = DQN.load(self.model_path)
@@ -69,6 +73,51 @@ class BattleAgents:
                     winner = "agent_0" if rewards["agent_0"] == 1.0 else "agent_1"
             print(i)
             return winner
+    
+    def battle_json(self, json_path):
+        env = TCGEnv()
+        model = DQN.load(self.model_path)
+        
+        if self.deck != []:
+            obs, _ = env.reset(options={'deck': {'agent_0': self.deck}})
+        else:
+            obs, _ = env.reset()
+
+        env.render()
+        initial_state: dict = env.to_json()
+        initial_state["event"] = "initial"
+        state_list = [initial_state]
+        done = False
+        i = 0
+        winner = ""
+        while not done:
+            agent = env.TurnPlayer
+            if agent == 'agent_1':
+                env.agent_1_play(mode='aggro', state_list=state_list)
+            switch_agent = 'agent_1' if agent == 'agent_0' else 'agent_0'
+            save_env_before = env.t_save_env()
+            action, _ = model.predict(obs[agent])
+            action_dict = {agent: action, switch_agent: 0}
+            obs, rewards, terminated, _, _ = env.step(action_dict)
+            save_env_after = env.t_save_env()
+
+            if save_env_before != save_env_after:
+                int_action = int(action)
+                if 0 <= int_action <= 8:
+                    event = ("play_card", int_action)
+                elif 9 <= int_action <= 38:
+                    event = ("attack", ((int_action) - 9) // 6, (int_action - 9) % 6)
+                elif int_action == 39:
+                    event = ("end_turn")
+                state = env.to_json()
+                state["event"] = event
+                state_list.append(state)
+                i += 1
+            done = terminated[agent]
+        print(state_list)
+        with open(json_path, 'w') as f:
+            json.dump(state_list, f, indent=4)
+        return winner
 
     def battle(self):
         action_list = []
@@ -247,7 +296,7 @@ class MakeDeck:
         self.model_path = 'models/' + self.model_name
         
 
-    def test_make_deck(self):
+    def make_deck(self):
         env = gym.make('MakeDeck-v0')
         model = DQN.load(self.model_path)
         obs, _ = env.reset()
@@ -264,5 +313,5 @@ class MakeDeck:
 if __name__ == '__main__':
     args = make_args()
 
-    test_model_instance = TestModel(model_name=args.model_name, deck_name=args.deck_name, mode=args.mode, iter_num=args.iter_num)
-    test_model_instance.test_base_model()
+    battle_agent = BattleAgents(args.model_name, args.deck_name)
+    battle_agent.battle_json('json/battle_log.json')

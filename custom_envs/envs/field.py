@@ -58,6 +58,8 @@ class TCGEnv(ParallelEnv):
         'card_38': [5, 3, 4, 0],
         'card_39': [4, 3, 4, 2],
     }
+    cards = list(card_map.values())
+
     rewards_map = {
         'punish': 0.0,
         'reward': 0.0,
@@ -90,8 +92,8 @@ class TCGEnv(ParallelEnv):
             concated_obs += [self.health[agent], self.health[switch_agent]]
             concated_obs += [self.PP[agent], self.PP[switch_agent]]
             concated_obs += flatten_list(self.hands[agent])
-            concated_obs += flatten_list(self.fields[agent])
-            concated_obs += flatten_list(self.fields[switch_agent])
+            concated_obs += flatten_list([card[:-1] if len(card) > 2 else [0, 0] for card in self.fields[agent]])
+            concated_obs += flatten_list([card[:-1] if len(card) > 2 else [0, 0] for card in self.fields[switch_agent]])
             concated_obs += self.attackable[agent]
             concated_obs += [len(self.decks[agent]), len(self.decks[switch_agent])]
             obs[agent] = np.array(concated_obs).astype(np.uint16)
@@ -166,26 +168,13 @@ class TCGEnv(ParallelEnv):
     def action_space(self, agent):
         return self.action_spaces[agent]
 
-    # def relocate_hand(self, agent):
-    #     for i in range(1, 9):
-    #         if self.hands[agent][i - 1] == [0, 0, 0, 0] and self.hands[agent][i] != [0, 0, 0, 0]:
-    #             self.hands[agent][i - 1] = self.hands[agent][i]
-    #             self.hands[agent][i] = [0, 0, 0, 0]
-
-    # def relocate_field(self, agent):
-    #     for i in range(1, 5):
-    #         if self.fields[agent][i - 1] == [0, 0] and self.fields[agent][i] != [0, 0]:
-    #             self.fields[agent][i - 1] = self.fields[agent][i]
-    #             self.attackable[agent][i - 1] = self.attackable[agent][i]
-    #             self.fields[agent][i] = [0, 0]
-    #             self.attackable[agent][i] = 0
-
     def play(self, agent, card_index):
         switch_agent = 'agent_0' if agent == 'agent_1' else 'agent_1'
         if self.hands[agent][card_index][self.CARD_HEALTH] == 0:
             observation = self.create_observation()
             return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
         card_info = self.hands[agent][card_index]
+        card_name = f"card_{self.cards.index(card_info)}"
         if card_info[self.CARD_PP] > self.PP[agent]:
             observation = self.create_observation()
             return observation, {agent: self.rewards_map['punish'], switch_agent:0.0}, {agent: False, switch_agent: False}, {agent: {}, switch_agent: {}}
@@ -196,7 +185,7 @@ class TCGEnv(ParallelEnv):
         done = False
         self.PP[agent] -= card_info[self.CARD_PP]
         self.hands[agent][card_index] = [0, 0, 0, 0]
-        self.fields[agent][field_index] = [card_info[self.CARD_ATTACK], card_info[self.CARD_HEALTH]]
+        self.fields[agent][field_index] = [card_info[self.CARD_ATTACK], card_info[self.CARD_HEALTH], card_name]
         done, rewards = self.activate_ability(agent, card_info, field_index=field_index)
         # self.relocate_hand(agent)
         return self.create_observation(), rewards, {agent: done, switch_agent: done}, {agent: {}, switch_agent: {}}
@@ -368,4 +357,68 @@ class TCGEnv(ParallelEnv):
                 if card_index != -1:
                     self.hands[agent][card_index] = card
         return False
-    
+
+    def agent_1_play(self, mode, state_list=[]):
+        playable_cards_dict = {}
+        for i in range(9):
+            if self.hands["agent_1"][i][self.CARD_HEALTH] != 0 and self.hands["agent_1"][i][self.CARD_PP] <= self.PP["agent_1"]:
+                manaratio = (self.hands["agent_1"][i][self.CARD_ATTACK] + self.hands["agent_1"][i][self.CARD_HEALTH]) / (2 * self.hands["agent_1"][i][self.CARD_PP])
+                playable_cards_dict[i] = manaratio if self.hands['agent_1'][i][self.CARD_ABILITY] == 0 else manaratio + 1
+        playable_cards = [k for k, v in sorted(playable_cards_dict.items(), key=lambda x: x[1], reverse=True)]
+        for i in playable_cards:
+            if self.find_empty_field("agent_1") != -1 and self.hands["agent_1"][i][self.CARD_PP] <= self.PP["agent_1"]:
+                _, reward, done, _ = self.play("agent_1", i)
+                state = self.to_json()
+                state["event"] = ("play_card", int(i))
+                state_list.append(state)
+                if done:
+                    return done, reward
+        if mode == "aggro":
+            for i in range(5):
+                if self.attackable["agent_1"][i] == 1:
+                    _, reward, done, _ = self.attack("agent_1", i, 5)
+                    state = self.to_json()
+                    state["event"] = ("attack", int(i), 5)
+                    state_list.append(state)
+                    if done:
+                        return done, reward
+        elif mode == "control":
+            for i in range(5):
+                if self.attackable["agent_1"][i] == 1 and self.find_empty_field("agent_0") != -1:
+                    attacked = False
+                    for j in range(5):
+                        if self.fields["agent_0"][j][self.CARD_HEALTH] != 0 and self.fields["agent_0"][j][self.CARD_ATTACK] < self.fields["agent_1"][i][self.CARD_HEALTH]:
+                            self.attack("agent_1", int(i), int(j))
+                            state = self.to_json()
+                            state["event"] = ("attack", int(i), int(j))
+                            state_list.append(state)
+                            attacked = True
+                            break
+                    if not attacked:
+                        _, reward, done, _ = self.attack("agent_1", int(i), 5)
+                        state = self.to_json()
+                        state["event"] = ("attack", int(i), 5)
+                        state_list.append(state)
+                        if done:
+                            return done, reward
+
+        _, reward, done, _ = self.end_turn("agent_1")
+        state = self.to_json()
+        state["event"] = ("end_turn")
+        state_list.append(state)
+        if done:
+            return done, reward
+        else:
+            return False, 0.0
+        
+    def to_json(self) -> dict:
+        env_dict = {
+            agent: {
+                'health': self.health[agent],
+                'PP': self.PP[agent],
+                'hand': ["card_" + str(self.cards.index(card)) for card in self.hands[agent] if card != [0, 0, 0, 0]],
+                'field': copy.deepcopy(self.fields[agent]),
+            } for agent in self.agents
+        }
+        env_dict['TurnPlayer'] = self.TurnPlayer
+        return env_dict
